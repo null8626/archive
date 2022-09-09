@@ -3,6 +3,7 @@ Archive of my dead projects.
 
 A few things to note first before exploring this repository:
 - Some projects here are not in english. Please note that i am not a native english speaker, and they are not in english since they were made with no intention of being uploaded to GitHub.
+- Some projects listed below are not available in this repository. It's because either the source got deleted or the project was unfinished at the time of deletion.
 - Pull requests that modify the projects will be closed.
 - Everything here is licensed under the [WTFPL license](https://github.com/dtf0/wtfpl).
 
