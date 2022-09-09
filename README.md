@@ -26,8 +26,8 @@ Big projects in this context are projects that continue to get maintained after 
 | string_toolkit.h | June 22, 2021      | October 3, 2021    | C                 | Library               |
 | Anime Luca       | July 10, 2021      | November 5, 2021   | JavaScript        | Discord bot           |
 | topgg-cpp-sdk    | September 15, 2021 | November 14, 2021  | C++               | Library               |
-| cprintf          | October 10, 2021   | June 11, 2022      | C                 | Library               |
 | jsfuck           | October 9, 2021    | September 9, 2022  | C                 | Library               |
+| cprintf          | October 10, 2021   | June 11, 2022      | C                 | Library               |
 | jsfuck           | March 3, 2022      | May 30, 2022       | Rust              | Library               |
 | sus              | April 28, 2022     | July 13, 2022      | C                 | Console application   |
 | fast-fail        | May 5, 2022        | July 13, 2022      | TypeScript        | Console application   |
