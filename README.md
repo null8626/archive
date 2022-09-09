@@ -8,12 +8,11 @@ A few things to note first before exploring this repository:
 
 ## Big projects in chronological order
 
-Big projects in this context are projects that continue get maintained after it's creation.
+Big projects in this context are projects that continue to get maintained after it's creation.
 
 | Project name     | Creation date      | Death date         | Language          | Type                  |
 |------------------|--------------------|--------------------|-------------------|-----------------------|
 | BatchOS          | November 13, 2019  | February 2, 2020   | Batch, Python     | Console application   |
-| Program Manager  | December 9, 2019   | December 9, 2019   | Visual Basic .NET | Graphical application |
 | DownloadButton   | December 11, 2019  | December 15, 2019  | Visual Basic .NET | Graphical application |
 | anything         | December 14, 2019  | December 16, 2019  | Visual Basic .NET | Graphical application |
 | MemeMaker        | December 29, 2019  | December 30, 2019  | Visual Basic .NET | Graphical application |
