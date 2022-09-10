@@ -1,10 +1,11 @@
 # archive
 Archival of the projects i no longer maintain.
 
-A few things to note before exploring this repository:
-- The projects shown in this GitHub are unmodified, except for slight changes since they might contain my personal information.
-- Pull requests that modify the projects will be closed.
-- Everything here is licensed under the [WTFPL license](https://github.com/dtf0/wtfpl).
+A few things to note before exploring this repository is that the projects in this repo are:
+- unmodified, except for slight changes for privacy reasons
+- some that i think is okay to be shown to the public
+- not allowed to be modified through pull requests
+- licensed under the WTFPL license
 
 ## List in chronological order
 
@@ -34,4 +35,3 @@ Small scripts i've made are not listed here.
 | jsfuck                | March 3, 2022      | May 30, 2022       | Rust              | Library               |
 | sus                   | April 28, 2022     | July 13, 2022      | C                 | Console application   |
 | fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application   |
-
