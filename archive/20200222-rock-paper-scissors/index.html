@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock, paper, Scissors!</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <br><br><h1 id="topContext">Play Rock Paper Scissors!</h1>
+        <div id="doContext"></div><br><br><br>
+        <div class="startPlaying">
+            <startPlay type="button" onclick="rockPaperScissors(1);" onmouseleave="document.getElementById('doContext').innerHTML = '';" onmouseover="document.getElementById('doContext').innerHTML = 'Play Rock Paper Scissors as Rock.';">Rock</startPlay>
+            <startPlay type="button" onclick="rockPaperScissors(2);" onmouseleave="document.getElementById('doContext').innerHTML = '';" onmouseover="document.getElementById('doContext').innerHTML = 'Play Rock Paper Scissors as Paper.';">Paper</startPlay>
+            <startPlay type="button" onclick="rockPaperScissors(3);" onmouseleave="document.getElementById('doContext').innerHTML = '';" onmouseover="document.getElementById('doContext').innerHTML = 'Play Rock Paper Scissors as Scissors.';">Scissors</startPlay><br><br><br><br><br><br><br>
+            <div id="copyright"></div><a href="https://adeletedgithubpage.github.io/sources/rockpaperscissors.exe">This project is also available as Application! Download Here (PC users)</a>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div id="pictureLeft"></div>
+        <div id="pictureRight"></div><br><br><br><br><br><br><br>
+        <div id="contextLeft"></div>
+        <div id="contextRight"></div><br><br><br>
+        <button id="tryAgain" onclick="location.reload();">Try Again?</button><br><br>
+        <script src="https://adeletedgithubpage.github.io/sources/copyright.js"></script>
+		<script src="script.js"></script>
+    </body>
+</html>

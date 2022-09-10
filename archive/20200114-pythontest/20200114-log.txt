@@ -1,0 +1,10 @@
+.LOG
+19:41 14/01/2020
+
+just installed phyton. planning on JavaScript later.
+Day previously intrested and watched HTML full(?) and watch until part 3 of phyton tutorial. about 18%?
+FILE: /phytoncode/phytontest1.ipynb
+20:13 14/01/2020
+
+lmao the test1 file has numbers from 1 to 10000 in it idk if its gonna explode the file size but
+if ur in da future sorry i am still a noob

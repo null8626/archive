@@ -1,0 +1,246 @@
+@font-face {
+    font-family: subfont;
+    src: url(https://adeletedgithubpage.github.io/sources/Aller_Rg.ttf)
+}
+.bt1{
+	background: none;
+	border-radius: 20px;
+    border: 2px solid white;
+	color:white;
+	font-family:Roboto, sans-serif;
+	padding: 15px 15px;
+	text-align:center;
+	display:inline-block;
+	font-weight:bold;
+	position:relative;
+	font-size:20px;
+	cursor:pointer;
+}
+.bt1:hover {
+	transition: 0.8s;
+    background-color:white;
+	color:black;
+	transform: scale(1.1)
+}
+.bt1:focus {
+	transition: 0.2s;
+    background-color:black;
+	border: none;
+	color:white;
+	transform: scale(1.0)
+}
+.box1 , .box2 , .box3 {
+	background-color:rgba(0, 0, 0, 0.5);
+	color:#fff;
+	text-align:left;
+	cursor:default;
+	font-family:Aller, sans-serif;
+	padding:20px;
+}
+.box1:hover , .box2:hover , .box3:hover {
+	transition: 0.5s;
+	background-color:rgba(0, 0, 0, 0.8)
+}
+a {
+    color:lightskyblue;
+}
+a:hover {
+    transition:0.8s;
+    color:red;
+    font-weight:bold;
+}
+b {
+	color:red;
+}
+c {
+	color:#35FF00;
+	font-weight:bold;
+}
+d {
+	color:#35FF00;
+	font-weight:bold;
+}
+os {
+	color:#fff;
+	font-weight:bold;
+}
+w {
+	color:yellow;
+	font-weight:bold;
+}
+body {
+    animation:bgcol 7s infinite;
+}
+@keyframes bgcol {
+    0% {
+        background-color:#873600;
+    }
+    50% {
+        background-color:#A04000;
+    }
+    100% {
+        background-color:#873600;
+    }
+}
+#title {
+    font-family:Bebas Neue, sans-serif;
+    font-size:50px;
+    font-weight:bold;
+    letter-spacing:2.5px;
+    cursor:default;
+    color:#F9E79F;
+    text-align:center;
+    animation:colscroll 4s infinite;
+}
+#title:hover {
+    transition:0.5s;
+    text-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+@keyframes colscroll {
+    0% {
+        transition:1s;
+        color:#F4D03F;
+    }
+    50% {
+        transition:1s;
+        letter-spacing:4px;
+        color:#F9E79F;
+    }
+    100% {
+        transition:1s;
+        color:#F4D03F;
+    }
+}
+.context , #subskills {
+    color:white;
+    cursor:default;
+    text-align:center;
+    font-family:subfont;
+    animation:contscroll 5s infinite;
+}
+.context:hover , #subskills:hover {
+    transition:0.5s;
+    text-shadow:3px 3px 5px black;
+}
+.helloworld {
+    font-family:Ubuntu Mono, monospace;
+    user-select:none;
+    color:white;
+    text-align:center;
+    font-size:25px;
+    opacity:0.75;
+    cursor:default;
+    animation:anim1 5s infinite;
+}
+
+@keyframes anim1 {
+    0% {
+        opacity:0.75;
+        text-shadow:-4px -4px rgba(0, 0, 0, 0.5);
+        color:white;
+    }
+    50%{
+        opacity:100;
+        text-shadow:4px 4px rgba(0, 0, 0, 0.5);
+        color:red;
+    }
+    100%{
+        opacity:0.75;
+        text-shadow:-4px -4px rgba(0, 0, 0, 0.5);
+        color:white;
+    }
+}
+#externaltitle , #skills {
+    font-family:Roboto, sans-serif;
+    font-size:25px;
+    text-align:center;
+    animation:contscroll 5s infinite , visualskew 5s infinite;
+}
+@keyframes contscroll {
+    0% {
+        transition:1s;
+        color:#F4D03F;
+    }
+    50% {
+        transition:1s;
+        color:#F9E79F;
+    }
+    100% {
+        transition:1s;
+        color:#F4D03F;
+    }
+}
+.prolang {
+    text-align:center;
+}
+#myimg {
+    position:relative;
+    border-radius:7.5px;
+    user-select:none;
+    box-shadow:4px 4px black , 4px -4px black , -4px 4px black , -4px -4px black;
+    display:inline-block;
+}
+@keyframes visualskew {
+    0% {
+        transform: translate(0%, 20%);
+    }
+    50% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(0%, 20%);
+    }
+}
+green {
+    color:lightgreen;
+}
+orange {
+    color:orange;
+}
+#imagescale {
+    width:350px;
+    height:250px;
+}
+#imagescale:hover {
+    transition:0.5s;
+    cursor:pointer;
+    transform:scale(1.05);
+    filter:brightness(70%);
+}
+.icons {
+    margin:20px;
+    display:inline-block;
+    position:relative;
+}
+#github:hover , #sololearn:hover , #email:hover {
+    transition:0.5s;
+    transform:scale(1.25);
+    filter:brightness(50%);
+    cursor:pointer;
+    animation:updown 0.5s infinite;
+}
+@keyframes updown {
+    0% {
+        transform:scale(1.0);
+    }
+    50% {
+        transform:scale(1.05);
+    }
+    100% {
+        transform:scale(1.0);
+    }
+}
+.bottom {
+    animation:shadowing 1s infinite;
+}
+@keyframes shadowing {
+    0% {
+        text-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow:5px 5px 5px rgba(0, 0, 0, 0);
+    }
+    100% {
+        text-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+}
