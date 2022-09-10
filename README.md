@@ -38,7 +38,7 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | ansi-adventure        | December 3, 2021   | December 12, 2021  | C                 | Console application(s) |
 | jsfuck                | March 3, 2022      | May 30, 2022       | Rust              | Library                |
 | weather-cli           | March 8, 2022      | July 13, 2022      | Rust              | Console application    |
-| sus                   | April 28, 2022     | July 13, 2022      | C                 | Console application    |
+| [sus](https://github.com/null8626/archive/tree/main/archive/20220428-sus) | April 28, 2022     | July 13, 2022      | C                 | Console application    |
 | fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application    |
 
 ## Foreign projects
@@ -53,3 +53,24 @@ List of foreign projects i used to collaborate in a chronological order.
 | [`animality.h`](https://github.com/animality-xyz/animality.h) | August 7, 2021    | May 18, 2022      | C          | Library     |
 | [Invitey](https://github.com/invitey)                         | November 6, 2021  | November 11, 2021 | JavaScript | Discord bot |
 | [spinners](https://github.com/rhygg/spinners)                 | November 17, 2021 | January 6, 2022   | V, C       | Library     |
+
+## Gallery
+
+### username601
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="250px;" alt=""/>
+		<br />
+		<p>username601's profile picture (April 7, 2020 - May 22, 2020)</p>
+      </td>
+	  <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="250px;" alt=""/>
+		<br />
+		<p>username601's profile picture (May 22, 2020 - January 20, 2022)</p>
+      </td>
+	</tr>
+  </tbody>
+</table>

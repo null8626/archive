@@ -3,5 +3,7 @@
 **/*.otf binary
 **/*.ttf binary
 **/*.ico binary
+archive/20220428-sus/deps/** linguist-vendored=true
+archive/20220428-sus/test.mjs linguist-vendored=true
 **/*.html linguist-vendored=true
 **/*.css linguist-vendored=true
