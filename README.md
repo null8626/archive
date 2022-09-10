@@ -8,9 +8,9 @@ A few things to note before exploring this repository is that the projects in th
 - licensed under the WTFPL license
 - expect the links here leading to nowhere and images not loading.
 
-## List in chronological order
+## Personal projects
 
-Small scripts i've made are not listed here.
+List of projects i no longer maintain in a chronological order. Small scripts i've made are not included here.
 
 | Project name          | Creation date      | Death date         | Language          | Type                  |
 |-----------------------|--------------------|--------------------|-------------------|-----------------------|
@@ -34,6 +34,22 @@ Small scripts i've made are not listed here.
 | topgg-cpp-sdk         | September 15, 2021 | November 14, 2021  | C++               | Library               |
 | [jsfuck](https://github.com/null8626/jsfuck)                | October 9, 2021    | September 9, 2022  | C                 | Library               |
 | [cprintf](https://github.com/null8626/cprintf)               | October 10, 2021   | June 11, 2022      | C                 | Library               |
-| jsfuck                | March 3, 2022      | May 30, 2022       | Rust              | Library               |
-| sus                   | April 28, 2022     | July 13, 2022      | C                 | Console application   |
-| fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application   |
+| vython                | November 24, 2021  | November 28, 2021  | V, C              | Library                |
+| ansi-adventure        | December 3, 2021   | December 12, 2021  | C                 | Console application(s) |
+| jsfuck                | March 3, 2022      | May 30, 2022       | Rust              | Library                |
+| weather-cli           | March 8, 2022      | July 13, 2022      | Rust              | Console application    |
+| sus                   | April 28, 2022     | July 13, 2022      | C                 | Console application    |
+| fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application    |
+
+## Foreign projects
+
+List of foreign projects i used to collaborate in a chronological order.
+
+| Project name                                                  | Joined at         | Left at           | Language   | Type        |
+|---------------------------------------------------------------|-------------------|-------------------|------------|-------------|
+| [ourcord](https://github.com/ourpalace/ourcord)               | December 13, 2020 | February 13, 2021 | TypeScript | Library     |
+| Hexagon                                                       | March 29, 2021    | March 30, 2022    | JavaScript | Discord bot |
+| [VXComplexity](https://top.gg/bot/685787142160777253)         | July 30, 2021     | November 5, 2021  | JavaScript | Discord bot |
+| [`animality.h`](https://github.com/animality-xyz/animality.h) | August 7, 2021    | May 18, 2022      | C          | Library     |
+| [Invitey](https://github.com/invitey)                         | November 6, 2021  | November 11, 2021 | JavaScript | Discord bot |
+| [spinners](https://github.com/rhygg/spinners)                 | November 17, 2021 | January 6, 2022   | V, C       | Library     |
