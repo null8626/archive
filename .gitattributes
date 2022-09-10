@@ -1,3 +1,7 @@
 **/*.png binary
+**/*.gif binary
+**/*.otf binary
+**/*.ttf binary
+**/*.ico binary
 **/*.html linguist-vendored=true
 **/*.css linguist-vendored=true
