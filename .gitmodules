@@ -1,3 +1,3 @@
 [submodule "archive/20210403-discord-bot-lib"]
 	path = archive/20210403-discord-bot-lib
-	url = https://github.com/VoltrexMaster/discord-bot-lib.git
+	url = http://github.com/VoltrexMaster/discord-bot-lib.git
