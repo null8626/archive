@@ -30,7 +30,8 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | twemoji-parser        | November 11, 2020  | June 10, 2021      | Python            | Library               |
 | news.js               | January 23, 2021   | June 10, 2021      | JavaScript        | Library               |
 | [discord-bot-lib](https://github.com/VoltrexMaster/discord-bot-lib)       | April 3, 2021      | July 12, 2022      | JavaScript        | Library               |
-| `string_toolkit.h`    | June 22, 2021      | October 3, 2021    | C                 | Library               |
+| [`string_toolkit.h`](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)    | June 22, 2021      | October 3, 2021    | C                 | Library               |
+| [string-toolkit](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)        | July 26, 2021      | August 3, 2021     | Python            | Library               |
 | Anime Luca            | July 10, 2021      | November 5, 2021   | JavaScript        | Discord bot           |
 | topgg-cpp-sdk         | September 15, 2021 | November 14, 2021  | C++               | Library               |
 | [jsfuck](https://github.com/null8626/jsfuck)                | October 9, 2021    | September 9, 2022  | C                 | Library               |
@@ -43,6 +44,26 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application    |
 
 ## Gallery
+
+### MemeMaker (2019)
+
+<p align="center">Planned meme templates to be supported by `MemeMaker`:</p>
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme1.png" width="175px;" alt=""/>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme2.png" width="175px;" alt=""/>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme3.png" width="175px;" alt=""/>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### somebot56 (2020)
 
