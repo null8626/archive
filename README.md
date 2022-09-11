@@ -62,12 +62,14 @@ List of foreign projects i used to collaborate in a chronological order.
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="250px;" alt=""/>
+        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="250px;" alt=""/>-->
+		<img src="https://avatars.githubusercontent.com/u/60427892?v=4" width="250px;" alt=""/>
 		<br />
 		<p>username601's profile picture (April 7, 2020 - May 22, 2020)</p>
       </td>
 	  <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="250px;" alt=""/>
+        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="250px;" alt=""/>-->
+		<img src="https://avatars.githubusercontent.com/u/60427892?v=4" width="250px;" alt=""/>
 		<br />
 		<p>username601's profile picture (May 22, 2020 - January 20, 2022)</p>
       </td>
