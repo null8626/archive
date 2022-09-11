@@ -49,6 +49,7 @@ List of foreign projects i used to collaborate in a chronological order.
 | Project name                                                  | Joined at         | Left at           | Language   | Type        |
 |---------------------------------------------------------------|-------------------|-------------------|------------|-------------|
 | [ourcord](https://github.com/ourpalace/ourcord)               | December 13, 2020 | February 13, 2021 | TypeScript | Library     |
+| World                                                         | December 13, 2020 | March 24, 2021    | Python     | Discord bot |
 | Hexagon                                                       | March 29, 2021    | March 30, 2022    | JavaScript | Discord bot |
 | [VXComplexity](https://top.gg/bot/685787142160777253)         | July 30, 2021     | November 5, 2021  | JavaScript | Discord bot |
 | [`animality.h`](https://github.com/animality-xyz/animality.h) | August 7, 2021    | May 18, 2022      | C          | Library     |
@@ -158,3 +159,22 @@ module.exports.config = {
     </tr>
   </tbody>
 </table>
+
+#### Reviews
+
+Note:
+- Not all reviews are listed here. This is just the first page at the time of the bot's deletion.
+- Every review listed here gives a 5 star rating. (No, i did not filter out the negative ones.)
+
+| Reviewer                                               | Review date       | Review                            | Reply                                                     |
+|--------------------------------------------------------|-------------------|-----------------------------------|-----------------------------------------------------------|
+| [norizon](https://top.gg/user/8723421806292828160)     | November 5, 2020  | *I like to explode people's head* | *ah i see thank you for enjoying our explode command :^)* |
+| [davon](https://top.gg/user/8422266759003439104) | December 11, 2020 | *good work!* | *thanks man!* |
+| [jaffadev](https://top.gg/user/7689549961838133248) | December 13, 2020 | *OMG THIS IS THE BEST BOT EVER MATE IT SO PERFECT AAAAAAAAAAA I LOVE YOU NULL#8626 OWO\\No but on a serious note, the bot is definitely worth it. You should definitely invite as it has many features and is all around great to use!\\You have really outdone yourself on this bot null. 💝* | *thanks qt* |
+| [AshtonMemer](https://top.gg/user/7772680608630374400) | December 31, 2020 | *if you like memes, economy, and funny images, then get this bot. if you don't like memes, economy, or funny images, then get this bot.* | *lmaoo thanks ashton* |
+| [WilloIzCitron](https://top.gg/user/8333103529996255232) | December 31, 2020 | *all image is spinning now i like it* | *nice* |
+| [flazepe](https://top.gg/user/7632495051489869824) | January 1, 2021 | *good bot for image generation and other multipurpose commands. i can tell that this was 100% made with effort* | *thanks and yes i love your sarcasm* |
+| [Matthew.](https://top.gg/user/7669402925235109888) | January 3, 2021 | *i like :yes:* | *:yes:* |
+| [MILLION](https://top.gg/user/3550838723584917504) | January 11, 2021 | *So much better than mee6* | *so true* |
+| [alexcool](https://top.gg/user/7687843929961201664) | February 2, 2021 | *this bot page is inside a washing machine\also good bot 10/10 would recommend* | *thanks xd* |
+| [ar](https://top.gg/user/1459010777929940992) | March 6, 2021 | *im reviewing because i want my face spinned here forever\also, yea, the bot is very cool too, i've been using it for a very long time :)* | *thank you!* |
