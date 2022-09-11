@@ -105,7 +105,7 @@ module.exports.config = {
 }
 ```
 
-        <p align="center"><i>somebot56 code snippet (April 4, 2020)</i></p>
+<p align="center"><i>somebot56 code snippet (April 4, 2020)</i></p>
       </td>
     </tr>
   </tbody>
