@@ -30,9 +30,9 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | twemoji-parser        | November 11, 2020  | June 10, 2021      | Python            | Library               |
 | news.js               | January 23, 2021   | June 10, 2021      | JavaScript        | Library               |
 | [discord-bot-lib](https://github.com/VoltrexMaster/discord-bot-lib)       | April 3, 2021      | July 12, 2022      | JavaScript        | Library               |
+| Anime Luca            | July 10, 2021      | November 5, 2021   | JavaScript        | Discord bot           |
 | [`string_toolkit.h`](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)    | July 22, 2021      | October 3, 2021    | C                 | Library               |
 | [string-toolkit](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)        | July 26, 2021      | August 3, 2021     | Python            | Library               |
-| Anime Luca            | July 10, 2021      | November 5, 2021   | JavaScript        | Discord bot           |
 | [topgg-cpp-sdk](https://bestofcpp.com/repo/vierofernando-topgg-cpp-sdk-cpp-utilities)         | September 15, 2021 | November 16, 2021  | C++               | Library               |
 | [jsfuck](https://github.com/null8626/jsfuck)                | October 9, 2021    | September 9, 2022  | C                 | Library               |
 | [cprintf](https://github.com/null8626/cprintf)               | October 10, 2021   | June 11, 2022      | C                 | Library               |
