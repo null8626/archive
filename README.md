@@ -8,7 +8,8 @@ A few things to note before exploring this repository is that the projects in th
 - licensed under the WTFPL license
 - expect the links here leading to nowhere and images not loading.
 
-## Personal projects
+<details>
+<summary><h2>Personal projects</h2></summary>
 
 List of projects i no longer maintain in a chronological order. Small scripts i've made are not included here.
 
@@ -42,7 +43,9 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | [sus](https://github.com/null8626/archive/tree/main/archive/20220428-sus) | April 28, 2022     | July 13, 2022      | C                 | Console application    |
 | fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application    |
 
-## Foreign projects
+</details>
+<details>
+<summary><h2>Foreign projects</h2></summary>
 
 List of foreign projects i used to collaborate in a chronological order.
 
@@ -55,9 +58,12 @@ List of foreign projects i used to collaborate in a chronological order.
 | [Invitey](https://github.com/invitey)                         | November 6, 2021  | November 11, 2021 | JavaScript | Discord bot |
 | [spinners](https://github.com/rhygg/spinners)                 | November 17, 2021 | January 6, 2022   | V, C       | Library     |
 
+</details>
+
 ## Gallery
 
-### somebot56 (2020)
+<details>
+<summary><h3>somebot56 (2020)</h3></summary>
 
 <table align="center">
   <tbody>
@@ -111,7 +117,9 @@ module.exports.config = {
   </tbody>
 </table>
 
-### username601 (2020 - 2022)
+</details>
+<details>
+<summary><h3>username601 (2020 - 2022)</h3></summary>
 
 <table align="center">
   <tbody>
@@ -158,3 +166,5 @@ module.exports.config = {
     </tr>
   </tbody>
 </table>
+
+</details>
