@@ -73,6 +73,8 @@ List of foreign projects i used to collaborate in a chronological order.
         <p>username601's profile picture (May 22, 2020 - January 20, 2022)</p>
       </td>
     </tr>
+  </tbody>
+  <tbody>
     <tr>
       <td align="center">
 	    <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="683px;" height="384px;" alt=""/>
