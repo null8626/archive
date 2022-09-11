@@ -57,7 +57,7 @@ List of foreign projects i used to collaborate in a chronological order.
 
 ## Gallery
 
-### somebot56
+### somebot56 (2020)
 
 <table align="center">
   <tbody>
@@ -105,13 +105,13 @@ module.exports.config = {
 }
 ```
 
-<p align="center"><i>somebot56 code snippet (April 4, 2020)</i></p>
+<p align="center"><i>somebot56's only surviving code snippet (April 4, 2020)</i></p>
       </td>
     </tr>
   </tbody>
 </table>
 
-### username601
+### username601 (2020 - 2022)
 
 <table align="center">
   <tbody>
