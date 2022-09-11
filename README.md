@@ -53,13 +53,13 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme1.png" width="175px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme1.png" width="150px;" alt=""/>
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme2.png" width="175px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme2.png" width="150px;" alt=""/>
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme3.png" width="175px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20191230-meme3.png" width="150px;" alt=""/>
       </td>
     </tr>
   </tbody>
@@ -71,7 +71,7 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200314-somebot56.png" width="175px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200314-somebot56.png" width="150px;" alt=""/>
         <br />
         <p><i>somebot56's profile picture</i></p>
       </td>
@@ -137,16 +137,16 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="175px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="150px;" alt=""/>
         <br />
         <p><i>username601's profile picture (April 7, 2020 - May 22, 2020)</i></p>
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="175px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="150px;" alt=""/>
         <p><i>username601's profile picture (May 22, 2020 - January 20, 2022)</i></p>
       </td>
       <td align="center">
-        <img src="https://www.boxed-up.co.uk/image/cache/data/international-post-box-350x350.png" width="175px;" alt=""/>
+        <img src="https://www.boxed-up.co.uk/image/cache/data/international-post-box-350x350.png" width="150px;" alt=""/>
         <br />
         <p><i>username601's profile picture image reference</i></p>
       </td>
@@ -210,7 +210,7 @@ module.exports.config = {
 | [WilloIzCitron](https://top.gg/user/8333103529996255232) | December 31, 2020 | *all image is spinning now i like it* | *nice* |
 | [flazepe](https://top.gg/user/7632495051489869824) | January 1, 2021 | *good bot for image generation and other multipurpose commands. i can tell that this was 100% made with effort* | *thanks and yes i love your sarcasm* |
 | [Matthew.](https://top.gg/user/7669402925235109888) | January 3, 2021 | *i like :yes:* | *:yes:* |
-| [MILLION](https://top.gg/user/3550838723584917504) | January 11, 2021 | *So much better than mee6* | *so true* |
+| [MILLION](https://top.gg/user/3550838723584915004) | January 11, 2021 | *So much better than mee6* | *so true* |
 | [alexcool](https://top.gg/user/7687843929961201664) | February 2, 2021 | *this bot page is inside a washing machine<br />also good bot 10/10 would recommend* | *thanks xd* |
 | [ar](https://top.gg/user/1459010777929940992) | March 6, 2021 | *im reviewing because i want my face spinned here forever<br />also, yea, the bot is very cool too, i've been using it for a very long time :)* | *thank you!* |
 
