@@ -104,8 +104,8 @@ module.exports.config = {
     name: "qrcode"
 }
 ```
-        
-        <br />
+
+<br />
         <p align="center"><i>somebot56 code snippet (April 4, 2020)</i></p>
       </td>
     </tr>
