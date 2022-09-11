@@ -145,7 +145,7 @@ module.exports.config = {
         <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601.png" width="250px;" alt=""/>-->
         <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
         <br />
-        <p><i>username601's website front page (May 27, 2020)</i></p>
+        <p><i>username601's website (May 27, 2020)</i></p>
       </td>
     </tr>
   </tbody>
@@ -155,6 +155,15 @@ module.exports.config = {
         <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
         <br />
         <p><i>username601's website command list (May 27, 2020)</i></p>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/699238761711665222/764429178815905792/unknown.png" width="455px;" height="256px;" alt=""/>
+        <br />
+        <p><i>username601's website (October 10, 2020)</i></p>
       </td>
     </tr>
   </tbody>
