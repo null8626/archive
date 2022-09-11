@@ -62,50 +62,51 @@ List of foreign projects i used to collaborate in a chronological order.
 <table align="center">
   <tbody>
     <tr>
-      <td align="center">
-        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601.png" width="250px;" alt=""/>-->
-        ```js
-        // https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=qrcode
-        
-        const Discord = require('discord.js')
-        const {prefix, token} = require('../config.json')
-        
-        module.exports.run = async (message, bot, args) => {
-            let msg = message.content.toLowerCase();
-            // command = !qr
-            var msgarr = msg.split("");
-            for (i = 0; i < 4; i++) {
-                msgarr.pop();
-            }
-            var wordToConvert = msgarr.join("");
-            var afterConvertArray = [];
-            var wtcArr = wordToConvert.split("");
-            var id = 0;
-            var alphabet = "abcdefghijklmnopqrstuvwxyz";
-            var alphabet = alphabet.split("");
-            for (i = 0; i < wordToConvert.length; i++) {
-                if (wtcArr[i]==" ") {
-                    afterConvertArray.push("%20");
-                } else if (alphabet.includes(wtcArr[i])==true) {
-                    afterConvertArray.push(wtcArr[i]);
-                } else {
-                    var id = 1;
-                }
-            }
-            if (id!=1) {
-                var imglink = afterConvertArray.join("");
-                message.channel.send({files: [{ attachment: imglink}]});
-            } else {
-                message.channel.send("Error: Invalid symbols detected.");
-            }
+      <td>
+      
+```js
+// https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=qrcode
+
+const Discord = require('discord.js')
+const {prefix, token} = require('../config.json')
+
+module.exports.run = async (message, bot, args) => {
+    let msg = message.content.toLowerCase();
+    // command = !qr
+    var msgarr = msg.split("");
+    for (i = 0; i < 4; i++) {
+        msgarr.pop();
+    }
+    var wordToConvert = msgarr.join("");
+    var afterConvertArray = [];
+    var wtcArr = wordToConvert.split("");
+    var id = 0;
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    var alphabet = alphabet.split("");
+    for (i = 0; i < wordToConvert.length; i++) {
+        if (wtcArr[i]==" ") {
+            afterConvertArray.push("%20");
+        } else if (alphabet.includes(wtcArr[i])==true) {
+            afterConvertArray.push(wtcArr[i]);
+        } else {
+            var id = 1;
         }
+    }
+    if (id!=1) {
+        var imglink = afterConvertArray.join("");
+        message.channel.send({files: [{ attachment: imglink}]});
+    } else {
+        message.channel.send("Error: Invalid symbols detected.");
+    }
+}
+
+module.exports.config = {
+    name: "qrcode"
+}
+```
         
-        module.exports.config = {
-            name: "qrcode"
-        }
-        ```
         <br />
-        <p><i>somebot56 code snippet (April 4cmd, 2020)</i></p>
+        <p align="center"><i>somebot56 code snippet (April 4, 2020)</i></p>
       </td>
     </tr>
   </tbody>
