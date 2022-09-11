@@ -175,7 +175,7 @@ module.exports.config = {
       <td align="center">
         <img src="https://cdn.discordapp.com/attachments/722752725267382323/794115016130560000/unknown.png" width="294px;" height="208px;" alt=""/>
         <br />
-        <p><i>the infamous spinny [top.gg](https://top.gg) page (December 31, 2020)</i></p>
+        <p><i>the infamous spinny <a href="https://top.gg">top.gg</a> page (December 31, 2020)</i></p>
       </td>
     </tr>
   </tbody>
