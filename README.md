@@ -30,7 +30,7 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | twemoji-parser        | November 11, 2020  | June 10, 2021      | Python            | Library               |
 | news.js               | January 23, 2021   | June 10, 2021      | JavaScript        | Library               |
 | [discord-bot-lib](https://github.com/VoltrexMaster/discord-bot-lib)       | April 3, 2021      | July 12, 2022      | JavaScript        | Library               |
-| Anime Luca            | July 10, 2021      | November 5, 2021   | JavaScript        | Discord bot           |
+| Anime Luca            | April 22, 2021     | November 5, 2021   | JavaScript        | Discord bot           |
 | [`string_toolkit.h`](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)    | July 22, 2021      | October 3, 2021    | C                 | Library               |
 | [string-toolkit](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)        | July 26, 2021      | August 3, 2021     | Python            | Library               |
 | [topgg-cpp-sdk](https://bestofcpp.com/repo/vierofernando-topgg-cpp-sdk-cpp-utilities)         | September 15, 2021 | November 16, 2021  | C++               | Library               |
@@ -66,6 +66,18 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 </table>
 
 ### somebot56 (2020)
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200314-somebot56.png" width="175px;" alt=""/>
+        <br />
+        <p><i>somebot56's profile picture</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <table align="center">
   <tbody>
@@ -201,3 +213,17 @@ module.exports.config = {
 | [MILLION](https://top.gg/user/3550838723584917504) | January 11, 2021 | *So much better than mee6* | *so true* |
 | [alexcool](https://top.gg/user/7687843929961201664) | February 2, 2021 | *this bot page is inside a washing machine<br />also good bot 10/10 would recommend* | *thanks xd* |
 | [ar](https://top.gg/user/1459010777929940992) | March 6, 2021 | *im reviewing because i want my face spinned here forever<br />also, yea, the bot is very cool too, i've been using it for a very long time :)* | *thank you!* |
+
+### Anime Luca (2021)
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/385837258768515083/841476491212488734/unknown.png" alt=""/>
+        <br />
+        <p><i>Anime Luca (May 11, 2021)</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
