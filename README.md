@@ -24,6 +24,7 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | MemeMaker             | December 29, 2019  | December 30, 2019  | Visual Basic .NET | Graphical application |
 | somebot56             | March 14, 2020     | April 7, 2020      | JavaScript        | Discord bot           |
 | [username601](https://github.com/null8626/archive/tree/main/archive/20200407-username601)           | April 7, 2020      | January 20, 2022   | Python            | Discord bot           |
+| [geomepydash](https://github.com/WilloIzCitron/geomepydash) | May 30, 2020 | July 3, 2020 | Python | Library |
 | Useless API           | June 3, 2020       | April 1, 2021      | Python            | Web application       |
 | [TerminalPad](https://github.com/null8626/archive/tree/main/archive/20200922-TerminalPad)           | September 22, 2020 | September 23, 2020 | C#                | Console application   |
 | twemoji-parser        | November 11, 2020  | June 10, 2021      | Python            | Library               |
@@ -62,17 +63,22 @@ List of foreign projects i used to collaborate in a chronological order.
   <tbody>
     <tr>
       <td align="center">
-        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="250px;" alt=""/>-->
-		<img src="https://avatars.githubusercontent.com/u/60427892?v=4" width="250px;" alt=""/>
-		<br />
-		<p>username601's profile picture (April 7, 2020 - May 22, 2020)</p>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="250px;" alt=""/>
+        <br />
+        <p>username601's profile picture (April 7, 2020 - May 22, 2020)</p>
       </td>
-	  <td align="center">
-        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="250px;" alt=""/>-->
-		<img src="https://avatars.githubusercontent.com/u/60427892?v=4" width="250px;" alt=""/>
-		<br />
-		<p>username601's profile picture (May 22, 2020 - January 20, 2022)</p>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="250px;" alt=""/>
+        <br />
+        <p>username601's profile picture (May 22, 2020 - January 20, 2022)</p>
       </td>
-	</tr>
+    </tr>
+    <tr>
+      <td align="center">
+	    <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="683px;" height="384px;" alt=""/>
+		<br />
+		<p>username601's website command list (May 27, 2020)</p>
+	  </td>
+    </tr>
   </tbody>
 </table>

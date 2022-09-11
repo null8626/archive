@@ -1,3 +1,6 @@
 [submodule "archive/20210403-discord-bot-lib"]
 	path = archive/20210403-discord-bot-lib
 	url = http://github.com/VoltrexMaster/discord-bot-lib.git
+[submodule "archive/20200530-geomepydash"]
+	path = archive/20200530-geomepydash
+	url = https://github.com/WilloIzCitron/geomepydash.git
