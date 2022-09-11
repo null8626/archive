@@ -47,7 +47,7 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 
 ### MemeMaker (2019)
 
-<p align="center">Planned meme templates to be supported by `MemeMaker`:</p>
+<p align="center">Planned meme templates to be supported by <i>MemeMaker</i>:</p>
 
 <table align="center">
   <tbody>
