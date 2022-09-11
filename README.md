@@ -57,6 +57,60 @@ List of foreign projects i used to collaborate in a chronological order.
 
 ## Gallery
 
+### somebot56
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601.png" width="250px;" alt=""/>-->
+        ```js
+        // https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=qrcode
+        
+        const Discord = require('discord.js')
+        const {prefix, token} = require('../config.json')
+        
+        module.exports.run = async (message, bot, args) => {
+            let msg = message.content.toLowerCase();
+            // command = !qr
+            var msgarr = msg.split("");
+            for (i = 0; i < 4; i++) {
+                msgarr.pop();
+            }
+            var wordToConvert = msgarr.join("");
+            var afterConvertArray = [];
+            var wtcArr = wordToConvert.split("");
+            var id = 0;
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
+            var alphabet = alphabet.split("");
+            for (i = 0; i < wordToConvert.length; i++) {
+                if (wtcArr[i]==" ") {
+                    afterConvertArray.push("%20");
+                } else if (alphabet.includes(wtcArr[i])==true) {
+                    afterConvertArray.push(wtcArr[i]);
+                } else {
+                    var id = 1;
+                }
+            }
+            if (id!=1) {
+                var imglink = afterConvertArray.join("");
+                message.channel.send({files: [{ attachment: imglink}]});
+            } else {
+                message.channel.send("Error: Invalid symbols detected.");
+            }
+        }
+        
+        module.exports.config = {
+            name: "qrcode"
+        }
+        ```
+        <br />
+        <p><i>somebot56 code snippet (April 4cmd, 2020)</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ### username601
 
 <table align="center">
@@ -64,21 +118,21 @@ List of foreign projects i used to collaborate in a chronological order.
     <tr>
       <td align="center">
         <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="250px;" alt=""/>-->
-		<img src="https://avatars.githubusercontent.com/u/60427892" width="175px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/u/60427892" width="175px;" alt=""/>
         <br />
         <p><i>username601's profile picture (April 7, 2020 - May 22, 2020)</i></p>
       </td>
       <td align="center">
         <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200522-username601.png" width="250px;" alt=""/>-->
-		<img src="https://avatars.githubusercontent.com/u/60427892" width="175px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/u/60427892" width="175px;" alt=""/>
         <br />
         <p><i>username601's profile picture (May 22, 2020 - January 20, 2022)</i></p>
       </td>
-	  <td align="center">
+      <td align="center">
         <img src="https://www.boxed-up.co.uk/image/cache/data/international-post-box-350x350.png" width="175px;" alt=""/>
-		<br />
-		<p><i>username601's profile picture image reference</i></p>
-	  </td>
+        <br />
+        <p><i>username601's profile picture image reference</i></p>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -87,20 +141,20 @@ List of foreign projects i used to collaborate in a chronological order.
   <tbody>
     <tr>
       <td align="center">
-		<!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601.png" width="250px;" alt=""/>-->
-	    <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
-		<br />
-		<p><i>username601's website front page (May 27, 2020)</i></p>
-	  </td>
+        <!--<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601.png" width="250px;" alt=""/>-->
+        <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
+        <br />
+        <p><i>username601's website front page (May 27, 2020)</i></p>
+      </td>
     </tr>
   </tbody>
   <tbody>
     <tr>
       <td align="center">
-	    <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
-		<br />
-		<p><i>username601's website command list (May 27, 2020)</i></p>
-	  </td>
+        <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
+        <br />
+        <p><i>username601's website command list (May 27, 2020)</i></p>
+      </td>
     </tr>
   </tbody>
 </table>
