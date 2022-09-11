@@ -162,7 +162,6 @@ module.exports.config = {
 
 #### Reviews
 
-Note:
 - Not all reviews are listed here. This is just the first page at the time of the bot's deletion.
 - Every review listed here gives a 5 star rating. (No, i did not filter out the negative ones.)
 
