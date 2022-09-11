@@ -169,6 +169,18 @@ module.exports.config = {
   </tbody>
 </table>
 
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/722752725267382323/794115016130560000/unknown.png" width="294px;" height="208px;" alt=""/>
+        <br />
+        <p><i>the infamous spinny [top.gg](https://top.gg) page (December 31, 2020)</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### Reviews
 
 - Not all reviews are listed here. This is just the first page at the time of the bot's deletion.
