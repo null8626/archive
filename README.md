@@ -42,20 +42,6 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | [sus](https://github.com/null8626/archive/tree/main/archive/20220428-sus) | April 28, 2022     | July 13, 2022      | C                 | Console application    |
 | fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application    |
 
-## Foreign projects
-
-List of foreign projects i used to collaborate in a chronological order.
-
-| Project name                                                  | Joined at         | Left at           | Language   | Type        |
-|---------------------------------------------------------------|-------------------|-------------------|------------|-------------|
-| [ourcord](https://github.com/ourpalace/ourcord)               | December 13, 2020 | February 13, 2021 | TypeScript | Library     |
-| World                                                         | December 13, 2020 | March 24, 2021    | Python     | Discord bot |
-| Hexagon                                                       | March 29, 2021    | March 30, 2022    | JavaScript | Discord bot |
-| [VXComplexity](https://top.gg/bot/685787142160777253)         | July 30, 2021     | November 5, 2021  | JavaScript | Discord bot |
-| [`animality.h`](https://github.com/animality-xyz/animality.h) | August 7, 2021    | May 18, 2022      | C          | Library     |
-| [Invitey](https://github.com/invitey)                         | November 6, 2021  | November 11, 2021 | JavaScript | Discord bot |
-| [spinners](https://github.com/rhygg/spinners)                 | November 17, 2021 | January 6, 2022   | V, C       | Library     |
-
 ## Gallery
 
 ### somebot56 (2020)
