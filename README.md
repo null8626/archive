@@ -82,7 +82,7 @@ List of foreign projects i used to collaborate in a chronological order.
   <tbody>
     <tr>
       <td align="center">
-	    <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="683px;" height="384px;" alt=""/>
+	    <img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
 		<br />
 		<p><i>username601's website command list (May 27, 2020)</i></p>
 	  </td>
