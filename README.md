@@ -155,9 +155,9 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/264445053596991498/902543132544106496/unknown.png" width="442x;" height="414px;" alt=""/>
+        <img src="https://cdn.discordapp.com/attachments/722752725267382323/794115016130560000/unknown.png" width="294px;" height="208px;" alt=""/>
         <br />
-        <p><i>the infamous spinny <a href="https://top.gg">top.gg</a> page (October 26, 2021)</i></p>
+        <p><i>the infamous spinny <a href="https://top.gg">top.gg</a> page (December 31, 2020)</i></p>
       </td>
     </tr>
   </tbody>
