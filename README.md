@@ -241,7 +241,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/752919918030094406/spotify.png" alt=""/>
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/752919918030094406/spotify.png" width="421px;" height="93px;" alt=""/>
         <br />
         <p><i>September 8, 2020</i></p>
       </td>
@@ -250,7 +250,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/771664030447435776/spotify.png" alt=""/>
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/771664030447435776/spotify.png" width="340px;" height="100px;" alt=""/>
         <br />
         <p><i>October 30, 2020</i></p>
       </td>
