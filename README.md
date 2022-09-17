@@ -279,6 +279,15 @@ module.exports.config = {
       </td>
     </tr>
   </tbody>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/704061127096664074/790160548029136896/card.png" width="350px;" height="95px;" alt=""/>
+        <br />
+        <p><i>December 20, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 #### Server card
