@@ -225,6 +225,39 @@ module.exports.config = {
   </tbody>
 </table>
 
+
+#### Spotify card
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/748190477760725062/spotify.png" width="350px;" height="350px;" alt=""/>
+        <br />
+        <p><i>August 26, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/752919918030094406/spotify.png" alt=""/>
+        <br />
+        <p><i>September 8, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/771664030447435776/spotify.png" alt=""/>
+        <br />
+        <p><i>October 30, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### Reviews
 
 - Not all reviews are listed here. This is just the first page at the time of the bot's deletion.
