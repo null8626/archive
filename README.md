@@ -302,6 +302,15 @@ module.exports.config = {
       </td>
     </tr>
   </tbody>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/704061127096664074/788459641201229844/688373853889495044.png" width="433px;" height="112px;" alt=""/>
+        <br />
+        <p><i>December 15, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 #### User card
