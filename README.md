@@ -225,6 +225,29 @@ module.exports.config = {
   </tbody>
 </table>
 
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/722752725267382323/794115016130560000/unknown.png" width="294px;" height="208px;" alt=""/>
+        <br />
+        <p><i>the infamous spinny <a href="https://top.gg">top.gg</a> page (December 31, 2020)</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/704061127096664074/783171262435557406/level.png" width="250px;" height="200px;" alt=""/>
+        <br />
+        <p><i>output of a geometry dash command that fetches the current weekly demon (December 1, 2020)</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 #### Spotify card
 
