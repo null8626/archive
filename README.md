@@ -241,7 +241,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/704061127096664074/783171262435557406/level.png" width="250px;" height="200px;" alt=""/>
+        <img src="https://cdn.discordapp.com/attachments/704061127096664074/783171262435557406/level.png" width="400px;" height="320px;" alt=""/>
         <br />
         <p><i>output of a geometry dash command that fetches the current weekly demon (December 1, 2020)</i></p>
       </td>
