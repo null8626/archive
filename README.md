@@ -84,6 +84,35 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
     <tr>
       <td>
       
+```
+LIST OF COMMANDS FROM THE s0mebot56 (ver 1.1)
+Programmed by someguy56 in DiscordJS (JavaScript)
+1. !cmd                      > LIST COMMANDS BY THIS BOT.
+2. !say '[word]'             > SAYS WHAT THE USER WANTS TO SAY.
+3. !randomWord               > GENERATE RANDOM WORDS FROM THE ENGLISH DICTIONARY.
+4. !flipCoin                 > FLIPS A COIN FOR YOU.
+6. !emojis                   > GENERATES A RANDOM EMOJI.
+7. !mathquestion             > GENERATES A RANDOM MATH QUESTION.
+8. !isprime [num]            > CHECKS IF [num] IS A PRIME NUMBER.
+9. !math [num] [sym] [num]   > ANSWERS A BASIC MATH EQUATION. ACCEPTED SYMs: [+ - x /].
+10. !factor [num]            > LISTS A FACTOR OF A NUMBER.
+11. !multiplication [num]    > LISTS A MULTIPLICATION LIST OF A NUMBER.
+12. !rps [rock/paper/scissors]  > PLAYS ROCK PAPER SCISSORS WITH ME.
+13. !hbd [name]                   > SAYS HAPPY BIRTHDAY TO SOMEONE!
+14. !prime                        > LISTS PRIME NUMBERS FOR YOU.
+15. !fibonacci                    > LISTS FIBONACCI NUMBERS.
+16. !pi                          > LISTS THE DIGITS/PLACES OF PI.
+16. !sqrt [num]                  > RETURNS THE RESULT OF A SQUARE ROOT OF A NUMBER.
+```
+
+<p align="center"><i>somebot56's commands list (March 17, 2020)</i></p>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>
+      
 ```js
 // https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=qrcode
 
