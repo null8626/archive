@@ -304,6 +304,29 @@ module.exports.config = {
   </tbody>
 </table>
 
+#### User card
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/740877075556335636/8626.png" width="333px;" height="143px;" alt=""/>
+        <br />
+        <p><i>August 6, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://cdn.discordapp.com/attachments/265156286406983680/748520546550939648/7777.png" width="400px;" height="357px;" alt=""/>
+        <br />
+        <p><i>August 27, 2020</i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### Reviews
 
 - Not all reviews are listed here. This is just the first page at the time of the bot's deletion.
