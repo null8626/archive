@@ -38,7 +38,7 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | [cprintf](https://github.com/null8626/cprintf)               | October 10, 2021   | June 11, 2022      | C                 | Library               |
 | vython                | November 24, 2021  | November 28, 2021  | V, C              | Library                |
 | ansi-adventure        | December 3, 2021   | December 12, 2021  | C                 | Console application(s) |
-| jsfuck                | March 3, 2022      | May 30, 2022       | Rust              | Library                |
+| [jsfuck](https://github.com/null8626/jsfuck/tree/86f468af4513613bc00ad99b2a2f7e8a92891e7a/rust)                | March 3, 2022      | May 30, 2022       | Rust              | Library                |
 | weather-cli           | March 8, 2022      | July 13, 2022      | Rust              | Console application    |
 | [sus](https://github.com/null8626/archive/tree/main/archive/20220428-sus) | April 28, 2022     | July 13, 2022      | C                 | Console application    |
 | fast-fail             | May 5, 2022        | July 13, 2022      | TypeScript        | Console application    |
