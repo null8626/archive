@@ -359,10 +359,7 @@ module.exports.config = {
       <td align="center">
         <img src="https://cdn.discordapp.com/attachments/265156286406983680/789567896186650634/card.png" width="374px;" height="92px;" alt=""/>
         <br />
-        <p><i>December 17, 2020</i></p>
-      </td>
-    </tr>
-  </tbody>
+        <p><i>December 17, 2020</i></p></td></tr></tbody>
 </table>
 
 #### Reviews
@@ -391,8 +388,5 @@ module.exports.config = {
       <td align="center">
         <img src="https://cdn.discordapp.com/attachments/385837258768515083/841476491212488734/unknown.png" alt=""/>
         <br />
-        <p><i>Anime Luca (May 11, 2021)</i></p>
-      </td>
-    </tr>
-  </tbody>
+        <p><i>Anime Luca (May 11, 2021)</i></p></td></tr></tbody>
 </table>
