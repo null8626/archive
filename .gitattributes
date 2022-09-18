@@ -3,41 +3,41 @@
 **/*.otf binary
 **/*.ttf binary
 **/*.ico binary
-.gitattributes eol=lf
-**/*.md eol=lf
-archive/**/*.py eol=lf
-archive/**/*.sln eol=lf
-archive/**/*.config eol=lf
-archive/**/*.vb eol=lf
-archive/**/*.resx eol=lf
-archive/**/*.vbproj eol=lf
-archive/**/*.myapp eol=lf
-archive/**/*.settings eol=lf
-archive/**/*.txt eol=lf
-archive/**/*.ipynb eol=lf
-archive/**/*.js eol=lf
-archive/**/*.ini eol=lf
-archive/**/*.json eol=lf
-archive/**/*.gitignore eol=lf
-archive/**/*.cfg eol=lf
-archive/**/*.bat eol=lf
-archive/**/*.cs eol=lf
-archive/**/*.csproj eol=lf
-archive/**/*.npmignore eol=lf
-archive/**/*.in eol=lf
-archive/**/*.c eol=lf
-archive/**/*.h eol=lf
-archive/**/*.editorconfig eol=lf
-archive/20220428-sus/build eol=lf
-archive/**/*.sus eol=lf
-archive/20220428-sus/Makefile eol=lf
-archive/**/*.rc eol=lf
-archive/**/*.mjs eol=lf
-archive/20220428-sus/deps/** linguist-vendored=true eol=lf
-archive/**/*.def eol=lf
-archive/**/*.pl eol=lf
-archive/**/*.s eol=lf
-archive/20220428-sus/deps/tcc/lib/Makefile eol=lf
-archive/**/*.html linguist-vendored=true eol=lf
-archive/**/*.css linguist-vendored=true eol=lf
-archive/20220428-sus/test.mjs linguist-vendored=true eol=lf
+.gitattributes eol=lf autocrlf=input
+**/*.md eol=lf autocrlf=input
+archive/**/*.py eol=lf autocrlf=input
+archive/**/*.sln eol=lf autocrlf=input
+archive/**/*.config eol=lf autocrlf=input
+archive/**/*.vb eol=lf autocrlf=input
+archive/**/*.resx eol=lf autocrlf=input
+archive/**/*.vbproj eol=lf autocrlf=input
+archive/**/*.myapp eol=lf autocrlf=input
+archive/**/*.settings eol=lf autocrlf=input
+archive/**/*.txt eol=lf autocrlf=input
+archive/**/*.ipynb eol=lf autocrlf=input
+archive/**/*.js eol=lf autocrlf=input
+archive/**/*.ini eol=lf autocrlf=input
+archive/**/*.json eol=lf autocrlf=input
+archive/**/*.gitignore eol=lf autocrlf=input
+archive/**/*.cfg eol=lf autocrlf=input
+archive/**/*.bat eol=lf autocrlf=input
+archive/**/*.cs eol=lf autocrlf=input
+archive/**/*.csproj eol=lf autocrlf=input
+archive/**/*.npmignore eol=lf autocrlf=input
+archive/**/*.in eol=lf autocrlf=input
+archive/**/*.c eol=lf autocrlf=input
+archive/**/*.h eol=lf autocrlf=input
+archive/**/*.editorconfig eol=lf autocrlf=input
+archive/20220428-sus/build eol=lf autocrlf=input
+archive/**/*.sus eol=lf autocrlf=input
+archive/20220428-sus/Makefile eol=lf autocrlf=input
+archive/**/*.rc eol=lf autocrlf=input
+archive/**/*.mjs eol=lf autocrlf=input
+archive/20220428-sus/deps/** linguist-vendored=true eol=lf autocrlf=input
+archive/**/*.def eol=lf autocrlf=input
+archive/**/*.pl eol=lf autocrlf=input
+archive/**/*.s eol=lf autocrlf=input
+archive/20220428-sus/deps/tcc/lib/Makefile eol=lf autocrlf=input
+archive/**/*.html linguist-vendored=true eol=lf autocrlf=input
+archive/**/*.css linguist-vendored=true eol=lf autocrlf=input
+archive/20220428-sus/test.mjs linguist-vendored=true eol=lf autocrlf=input
