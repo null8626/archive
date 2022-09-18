@@ -24,12 +24,12 @@ List of projects i no longer maintain in a chronological order. Small scripts i'
 | MemeMaker             | December 29, 2019  | December 30, 2019  | Visual Basic .NET | Graphical application |
 | somebot56             | March 14, 2020     | April 7, 2020      | JavaScript        | Discord bot           |
 | [username601](https://github.com/null8626/archive/tree/main/archive/20200407-username601)           | April 7, 2020      | January 20, 2022   | Python            | Discord bot           |
-| [geomepydash](https://github.com/WilloIzCitron/geomepydash) | May 30, 2020 | July 3, 2020 | Python | Library |
+| [geomepydash](https://github.com/null8626/archive/tree/main/archive/20200530-geomepydash) | May 30, 2020 | July 3, 2020 | Python | Library |
 | Useless API           | June 3, 2020       | April 1, 2021      | Python            | Web application       |
 | [TerminalPad](https://github.com/null8626/archive/tree/main/archive/20200922-TerminalPad)           | September 22, 2020 | September 23, 2020 | C#                | Console application   |
 | twemoji-parser        | November 11, 2020  | June 10, 2021      | Python            | Library               |
 | news.js               | January 23, 2021   | June 10, 2021      | JavaScript        | Library               |
-| [discord-bot-lib](https://github.com/VoltrexMaster/discord-bot-lib)       | April 3, 2021      | July 12, 2022      | JavaScript        | Library               |
+| [discord-bot-lib](https://github.com/null8626/archive/tree/main/archive/20210403-discord-bot-lib)       | April 3, 2021      | July 12, 2022      | JavaScript        | Library               |
 | Anime Luca            | April 22, 2021     | November 5, 2021   | JavaScript        | Discord bot           |
 | [`string_toolkit.h`](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)    | July 22, 2021      | October 3, 2021    | C                 | Library               |
 | [string-toolkit](https://github.com/null8626/archive/tree/main/archive/20210915-string-toolkit)        | July 26, 2021      | August 3, 2021     | Python            | Library               |
