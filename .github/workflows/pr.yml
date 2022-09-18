@@ -1,0 +1,14 @@
+name: cancel
+'on':
+  pull_request:
+    paths:
+      - 'archive/**'
+      - 'assets/**'
+jobs:
+  cancel:
+    name: cancel
+    runs-on: ubuntu-latest
+    steps:
+    - uses: superbrothers/close-pull-request@v3
+      with:
+        comment: "I'm sorry, but we do not accept Pull Requests that modify the `archive` and/or `assets` directory."

@@ -4,6 +4,8 @@
 **/*.ttf binary
 **/*.ico binary
 .gitattributes eol=lf autocrlf=input
+.gitmodules eol=lf autocrlf=input
+.github/** eol=lf autocrlf=input
 **/*.md eol=lf autocrlf=input
 archive/**/*.py eol=lf autocrlf=input
 archive/**/*.sln eol=lf autocrlf=input
