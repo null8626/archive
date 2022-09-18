@@ -3,7 +3,41 @@
 **/*.otf binary
 **/*.ttf binary
 **/*.ico binary
-archive/20220428-sus/deps/** linguist-vendored=true
-archive/20220428-sus/test.mjs linguist-vendored=true
-**/*.html linguist-vendored=true
-**/*.css linguist-vendored=true
+.gitattributes eol=lf
+**/*.md eol=lf
+archive/**/*.py eol=lf
+archive/**/*.sln eol=lf
+archive/**/*.config eol=lf
+archive/**/*.vb eol=lf
+archive/**/*.resx eol=lf
+archive/**/*.vbproj eol=lf
+archive/**/*.myapp eol=lf
+archive/**/*.settings eol=lf
+archive/**/*.txt eol=lf
+archive/**/*.ipynb eol=lf
+archive/**/*.js eol=lf
+archive/**/*.ini eol=lf
+archive/**/*.json eol=lf
+archive/**/*.gitignore eol=lf
+archive/**/*.cfg eol=lf
+archive/**/*.bat eol=lf
+archive/**/*.cs eol=lf
+archive/**/*.csproj eol=lf
+archive/**/*.npmignore eol=lf
+archive/**/*.in eol=lf
+archive/**/*.c eol=lf
+archive/**/*.h eol=lf
+archive/**/*.editorconfig eol=lf
+archive/20220428-sus/build eol=lf
+archive/**/*.sus eol=lf
+archive/20220428-sus/Makefile eol=lf
+archive/**/*.rc eol=lf
+archive/**/*.mjs eol=lf
+archive/20220428-sus/deps/** linguist-vendored=true eol=lf
+archive/**/*.def eol=lf
+archive/**/*.pl eol=lf
+archive/**/*.s eol=lf
+archive/20220428-sus/deps/tcc/lib/Makefile eol=lf
+archive/**/*.html linguist-vendored=true eol=lf
+archive/**/*.css linguist-vendored=true eol=lf
+archive/20220428-sus/test.mjs linguist-vendored=true eol=lf
