@@ -2,10 +2,10 @@
 Archival of the projects i no longer maintain.
 
 A few things to note before exploring this repository is that the projects in this repo are:
-- unmodified, except for slight changes for privacy reasons
-- some that i think is okay to be shown to the public
-- not allowed to be modified through pull requests
-- licensed under the WTFPL license
+- unmodified, except for slight changes for privacy reasons.
+- only some that i think is okay to be shown to the public.
+- licensed under the [WTFPL license](http://www.wtfpl.net/).
+- not allowed to be modified through pull requests.
 - expect the links here leading to nowhere and images not loading.
 
 ## Personal projects
