@@ -1,0 +1,29 @@
+{
+  "name": "discord-bot-lib",
+  "version": "1.0.0",
+  "description": "A basic discord bot library for node.js but the library doesn't cache discord objects.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/null8626/discord-bot-lib.git"
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "discord-api",
+    "discord-bot"
+  ],
+  "dependencies": {
+    "pako": "^2.0.3",
+    "ws": "^7.4.4"
+  },
+  "author": "null8626",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/null8626/discord-bot-lib/issues"
+  },
+  "homepage": "https://github.com/null8626/discord-bot-lib#readme"
+}
