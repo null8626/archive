@@ -1,0 +1,748 @@
+[
+  {
+    "_id": "5f01ddcefc64bac7542107ab",
+    "userid": "271576733168173057",
+    "bal": -666666,
+    "desc": "just random people, came from Triangle of death",
+    "bankbal": 8413,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f01fff8bde8b7f0c275df32",
+    "userid": "527273965257883669",
+    "bal": 20161,
+    "desc": "pew pew pew pew",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f026a5cb82f169bfbaedbf7",
+    "userid": "552492140270452736",
+    "bal": 254567,
+    "desc": "Aaaaaaaaaaaaa uwu",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f02eba10639750f80579fe6",
+    "userid": "665419057075585025",
+    "bal": 4811,
+    "desc": "Developer and owner of Kyle Gaz Garrick #1683. [Learn more.](https://nefomemes.herokuapp.com/kylebot)",
+    "bankbal": 15544,
+    "lastDaily": null,
+    "color": "255,0,0"
+  },
+  {
+    "_id": "5f02fadf9eb346c86ab45237",
+    "userid": "714915046861439057",
+    "bal": 15036,
+    "desc": "Dudi dudi dam",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f048a3a5822d6af8ee36d7c",
+    "userid": "697317648865951745",
+    "bal": 708,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f074b3a1bfb929db86ed103",
+    "userid": "489060995004891137",
+    "bal": 11379,
+    "desc": "lmao",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f0907ff487f5174b1738089",
+    "userid": "700609775838298113",
+    "bal": 139,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f1add6d07c7c8637816fd94",
+    "userid": "530678846752686090",
+    "bal": 558,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f1c6e5aec591c0978766e9f",
+    "userid": "369507341973979136",
+    "bal": 4000,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f1d215ccaaab0b5eb5662be",
+    "userid": "582526329585532948",
+    "bal": 1655,
+    "desc": "I - I am female or male??",
+    "bankbal": 16217,
+    "lastDaily": 1610023552.6791666,
+    "streak": 1
+  },
+  {
+    "_id": "5f1e0c6689969fc74a5c879c",
+    "userid": "432689076626522132",
+    "bal": 59041,
+    "desc": "No",
+    "bankbal": 555,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f1f92b066778086777128ba",
+    "userid": "733968991264964649",
+    "bal": 1000,
+    "desc": "<:02smug:713734327376019506>",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f20bf033ecb92209b31b351",
+    "userid": "662420397274169376",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f26eaa6f46aa86ad2626f30",
+    "userid": "528777328440901632",
+    "bal": 0,
+    "desc": "Baby glock▶️0️⃣⏏️⏺",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2816c688050303cd22f3b7",
+    "userid": "493768058012172288",
+    "bal": 0,
+    "desc": "aldy jelek",
+    "bankbal": 11588,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2a56e33eec8d6e8bf3c73c",
+    "userid": "294571321373753365",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2a9d5ebd39ae40f952307f",
+    "userid": "289479495444987904",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2a9d6abd39ae40f9523080",
+    "userid": "310853886191599616",
+    "bal": 383,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2a9d7abd39ae40f9523081",
+    "userid": "111478728218902528",
+    "bal": 315,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2a9d8fbd39ae40f9523082",
+    "userid": "265925031131873281",
+    "bal": 283,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2a9dbbbd39ae40f9523083",
+    "userid": "464287642356285442",
+    "bal": 305,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2aae95bd39ae40f9523084",
+    "userid": "451387167747473420",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2be7a3aec101da57ac016f",
+    "userid": "538565509835390996",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2c43e884163e10c27f4e4f",
+    "userid": "732974334590713859",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2ceef5b4b08583d042cc7c",
+    "userid": "657111604567212062",
+    "bal": 129,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2d46d7330af49f19345aa2",
+    "userid": "456204633275236352",
+    "bal": 1500,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2d47f2330af49f19345aa3",
+    "userid": "467277298962268190",
+    "bal": 500,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2d712f7d2fe4d0cb3018e2",
+    "userid": "253025620043366400",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2f8e57d4c3f55b49a8b95a",
+    "userid": "662331274513481738",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f2fe32d4fc4ab4d8d6f11ab",
+    "userid": "460751723342987274",
+    "bal": 3000,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3094834fc4ab4d8d6f11ac",
+    "userid": "508449321176268801",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f30948b4fc4ab4d8d6f11ad",
+    "userid": "702457675887280198",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3094974fc4ab4d8d6f11ae",
+    "userid": "549344464465035296",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f30960d4fc4ab4d8d6f11af",
+    "userid": "699790798752972841",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3096244fc4ab4d8d6f11b0",
+    "userid": "677582258164596746",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f30b6aff3e8637827ee26fd",
+    "userid": "671309273245941802",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 906,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f350343450a4a5b53b7a49b",
+    "userid": "691351064477302804",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f359dd8c719bde6fe4284bc",
+    "userid": "242334735798501376",
+    "bal": 488,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3b777d509c997897b2471a",
+    "userid": "469793827322986506",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3d80a0075957f5aa416dfc",
+    "userid": "470238326943907851",
+    "bal": 3216,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3f0c42d03d16950495fbfa",
+    "userid": "685171476004995140",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f3f0c67d03d16950495fbfb",
+    "userid": "106882874447278080",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f41faf58d8d6f7ee8fa37f8",
+    "userid": "708458523985707158",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f41fb488d8d6f7ee8fa37f9",
+    "userid": "678343456015384627",
+    "bal": 24377,
+    "desc": "Hanyalah Manusia Saya",
+    "bankbal": 0,
+    "lastDaily": 1613472555.196029,
+    "streak": 1,
+    "color": "0,255,255"
+  },
+  {
+    "_id": "5f43896127fd1b109a4be43e",
+    "userid": "693038582390063134",
+    "bal": 1885,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f44d13331a76ef42ddc415d",
+    "userid": "685122686577278997",
+    "bal": 130837,
+    "desc": "de.i.pe_",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f44dea1ebd52c7adcb04061",
+    "userid": "720284878452686938",
+    "bal": 19228,
+    "desc": "gatau",
+    "bankbal": 0,
+    "lastDaily": 1613472484.4900184,
+    "streak": 1
+  },
+  {
+    "_id": "5f45d5e1de87a63919287460",
+    "userid": "710699594601988106",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f469b3551d4d4472cec436d",
+    "userid": "610122588110192681",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f4a689ea2b7fa3a5831b0a0",
+    "userid": "723461403222081606",
+    "bal": 9611,
+    "desc": "ahmzx",
+    "bankbal": 3088,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f4b56c87f192c8fcd8fd20a",
+    "userid": "681843628317868049",
+    "bal": 250,
+    "desc": "y",
+    "bankbal": 751,
+    "lastDaily": 1608516746.0291426,
+    "streak": 1
+  },
+  {
+    "_id": "5f4bad71039a43529b45ecd5",
+    "userid": "720306122082484304",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f51be0cc69d5cb9e0541453",
+    "userid": "262347102217175042",
+    "bal": 100,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f522d7b059758d9f2900101",
+    "userid": "265080794911866881",
+    "bal": -500,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f53490b2188afaabfaf647c",
+    "userid": "585371124766998528",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f5378112188afaabfaf647d",
+    "userid": "381916855365009418",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f589d699e90b97b97315c42",
+    "userid": "265313384033943553",
+    "bal": 114,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f5bc5597d2b6e34a52d8ed2",
+    "userid": "540987434943643652",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f60d18c10cf588d65b4653d",
+    "userid": "352361476499177472",
+    "bal": 3422,
+    "desc": "Don't eat me, I'm not an apple",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f60f95b10cf588d65b46541",
+    "userid": "565960314970177556",
+    "bal": 500,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f6357a75e498a70402dc547",
+    "userid": "458318081631191040",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f6357b25e498a70402dc548",
+    "userid": "241373077982806017",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f6487832451d961c182c15c",
+    "userid": "492025613478264842",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f675a5b43a012fd33c57024",
+    "userid": "608722568907587609",
+    "bal": 1667,
+    "desc": "a<:wow:746419649377337444>",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f68a47ba3e1bb5eb546abf5",
+    "userid": "735410445409845251",
+    "bal": 59949,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": 1610328890.2848752,
+    "color": "255,215,0",
+    "streak": 1
+  },
+  {
+    "_id": "5f77aa48dc92c2eb804fe8c1",
+    "userid": "707229735729496074",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f77aa9ddc92c2eb804fe8c2",
+    "userid": "425760069100240916",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f79a2fa145023d932db72a5",
+    "userid": "337954786190295050",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f8e938e9bb818e2404c7994",
+    "userid": "650756055390879757",
+    "bal": 385,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5f92f398b391d43c41839135",
+    "userid": "457569956079337472",
+    "bal": 4804,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5fc5e335c37c3190c90bb927",
+    "userid": "731130300616147065",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5fc6ec7a2c2a012c36497c51",
+    "userid": "770832112055615501",
+    "bal": 0,
+    "desc": "hi",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5fce5825bc1932392e2786af",
+    "userid": "388467613292036099",
+    "bal": 0,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": null
+  },
+  {
+    "_id": "5fd57f72825c02347c05a9f4",
+    "userid": "662334026098409480",
+    "bal": 48298,
+    "desc": "nothing here!",
+    "bankbal": 0,
+    "lastDaily": 1610598821.4797196,
+    "streak": 1
+  },
+  {
+    "_id": "5fe237cb5f23b2e98be97409",
+    "userid": "257062280779268097",
+    "lastDaily": null,
+    "bal": 3039,
+    "bankbal": 0
+  },
+  {
+    "_id": "5fe44bdd2889d1fcc04ecf01",
+    "userid": "661200758510977084",
+    "bal": 3812,
+    "desc": "hi",
+    "bankbal": 11046,
+    "lastDaily": 1615034356.1268246,
+    "color": "255,165,0",
+    "streak": 2,
+    "cd_bt": 1614759156.4237084,
+    "cd_wr": 1615036170.8465233,
+    "cd_fs": 1614759447.3878613,
+    "cd_bg": 1615034972.914173
+  },
+  {
+    "_id": "6001e7105e5e2a5deaf743c1",
+    "userid": "621105574305857577",
+    "lastDaily": null,
+    "bal": 340,
+    "bankbal": 0
+  },
+  {
+    "_id": "600a9259337a23e061cc5eaf",
+    "userid": "780686067501236254",
+    "lastDaily": 1611305577.8177016,
+    "bal": 815,
+    "bankbal": 0,
+    "streak": 1
+  },
+  {
+    "_id": "602248fd719cdad6eeb80bfd",
+    "userid": "774820289757708298",
+    "lastDaily": null,
+    "bal": 1266,
+    "bankbal": 0
+  },
+  {
+    "_id": "602742af637045815914e09c",
+    "userid": "683620480153813014",
+    "lastDaily": 1613185726.9628901,
+    "bal": 591,
+    "bankbal": 0,
+    "streak": 1
+  },
+  {
+    "_id": "602f2d4810604135263b0694",
+    "userid": "806043964649111582",
+    "lastDaily": 1613704608.775651,
+    "bal": 1092,
+    "bankbal": 0,
+    "streak": 1
+  },
+  {
+    "_id": "603043deab41a6235993f042",
+    "userid": "566766267046821888",
+    "lastDaily": 1613775848.5043242,
+    "bal": 886,
+    "bankbal": 0,
+    "streak": 1
+  },
+  {
+    "_id": "6038f29a4dfd29fdae6631aa",
+    "userid": "730879410189631530",
+    "lastDaily": null,
+    "bal": 471,
+    "bankbal": 0
+  },
+  {
+    "_id": "603b478ab8398e8354547772",
+    "userid": "493594602213867531",
+    "lastDaily": null,
+    "bal": 0,
+    "bankbal": 0
+  },
+  {
+    "_id": "604378077d5dd82d73d4dfc1",
+    "userid": "790168760953602068",
+    "lastDaily": 1615034382.0811937,
+    "bal": 486,
+    "bankbal": 0,
+    "cd_wr": 1615036175.7757242,
+    "streak": 1
+  },
+  {
+    "_id": "604764fbfbb68ebf8bd54801",
+    "userid": "396571938081865741",
+    "lastDaily": 1615292416.3433294,
+    "bal": 548,
+    "bankbal": 0,
+    "streak": 1,
+    "cd_wr": 1615294290.0704718
+  },
+  {
+    "_id": "606d86d364365ed820fc52f5",
+    "userid": "478881452604522499",
+    "lastDaily": 1620007886.7558312,
+    "bal": 595,
+    "bankbal": 0,
+    "cd_bg": 1620008457.0358522,
+    "streak": 1
+  },
+  {
+    "_id": "606d878764365ed820fc52f6",
+    "userid": "611292879201239051",
+    "lastDaily": null,
+    "bal": 0,
+    "bankbal": 0
+  },
+  {
+    "_id": "609ce390cf949b390bca0c47",
+    "userid": "556848100061478912",
+    "lastDaily": null,
+    "bal": 0,
+    "bankbal": 0
+  },
+  {
+    "_id": "60b7a64611305fa8bbafb604",
+    "userid": "700812754855919667",
+    "lastDaily": null,
+    "bal": 0,
+    "bankbal": 0
+  },
+  {
+    "_id": "60f45a02a5ceda9fd42fcdaf",
+    "userid": "310730167179804673",
+    "lastDaily": null,
+    "bal": 600,
+    "bankbal": 0,
+    "cd_bg": 1626627162.5778604
+  }
+]

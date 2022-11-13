@@ -1,0 +1,66 @@
+{
+  "_id": "5f05977c16ff7726b07762f6",
+  "bans": [
+    "493768058012172288|duar",
+    "552492140270452736|minta di ban :v",
+    "718116697286115348|gatau",
+    "265080794911866881|NO",
+    "478881452604522499|weeb",
+    "621105574305857577|weeb"
+  ],
+  "h": true,
+  "changelog": [
+    "`[2021-02-18 05:45:50 UTC]` Repurposing the spotify command since presence intent sucks.",
+    "`[2021-02-18 15:17:04 UTC]` Fixed `1bal` bug and finished rewriting the `spotify` command.",
+    "`[2021-02-19 02:29:37 UTC]` Added the `playlist` subcommand to the `spotify` command.",
+    "`[2021-02-19 15:09:46 UTC]` Every bot response now should become a reply. (Dont worry it doesnt ping)",
+    "`[2021-02-19 16:31:54 UTC]` The spotify command now has an optional `--card` flag.",
+    "`[2021-02-19 17:37:42 UTC]` Fixed `1aeon` bug.",
+    "`[2021-02-22 01:25:38 UTC]` Added new subcommand: `members` to `role` command.",
+    "`[2021-02-24 11:11:28 UTC]` Fixed image gen commands not working with default emojis.",
+    "`[2021-02-24 11:45:27 UTC]` Added a stricter rule to people inviting the bot to bot farms where there are more bots than half the members.",
+    "`[2021-02-28 06:08:40 UTC]` New command: `1deezer`",
+    "`[2021-02-28 13:18:19 UTC]` Less database calls for economy commands, New command: `1cooldowns`, Removed `1new` command.",
+    "`[2021-03-01 03:32:04 UTC]` Fixed `1guess flag` bug.",
+    "`[2021-03-09 12:07:07 UTC]` `bal` command should now automatically create profiles for you (if you dont have one)."
+  ],
+  "stats": "88:75556:92:41:1642580278.6399186",
+  "commands_run": 1217,
+  "down_times": [
+    "2021-06-10T02:26:30Z|2 hours",
+    "2021-06-23T20:29:46Z|12 hours",
+    "2021-06-25T08:25:47Z|11 hours",
+    "2021-07-01T15:03:55Z|14 hours",
+    "2021-07-14T12:03:57Z|15 hours",
+    "2021-07-16T21:22:41Z|8 hours",
+    "2021-07-17T02:35:07Z|5 hours",
+    "2021-07-25T04:33:30Z|23 hours",
+    "2021-08-16T11:16:26Z|4 hours",
+    "2021-08-16T11:17:43Z|1 minute",
+    "2021-08-25T03:39:18Z|13 hours",
+    "2021-09-13T19:03:08Z|13 hours",
+    "2021-09-25T04:03:22Z|2 hours",
+    "2021-10-21T21:47:45Z|12 hours",
+    "2021-10-24T03:52:28Z|5 hours",
+    "2021-11-03T13:58:06Z|12 hours",
+    "2021-11-24T03:53:33Z|4 hours",
+    "2021-12-07T02:45:35Z|23 hours",
+    "2021-12-25T10:10:20Z|23 hours",
+    "2022-01-20T06:46:13Z|22 hours",
+    "2022-01-20T06:46:26Z|0 seconds"
+  ],
+  "online": false,
+  "spotify_credentials": {
+    "token": null,
+    "expiry_date": null
+  },
+  "giveaway": [
+    "661200758510977084",
+    "665419057075585025",
+    "735410445409845251",
+    "478881452604522499",
+    "611292879201239051",
+    "432689076626522132",
+    "556848100061478912"
+  ]
+}
