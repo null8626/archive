@@ -236,6 +236,36 @@ module.exports.config = {
   </tbody>
 </table>
 
+#### Database stats
+
+- **Date of creation:** May 14, 2020
+- **Peak size:** June 9, 2021 (153.66 KB)
+- **Largest size increase:** July 19, 2020 (+30 KB)
+- **Highest overall traffic:**
+	- **Shard 0:** August 6, 2021
+	- **Shard 1:** October 3, 2020
+	- **Shard 2:** October 8, 2020
+- **Highest command traffic:**
+	- **Shard 0:** August 6, 2021 (0.3921828908554572/s)
+	- **Shard 1:** June 16, 2021 (0.3923497267759563/s)
+	- **Shard 2:** August 6, 2021 (0.3921828908554572/s)
+- **Highest query traffic:**
+	- **Shard 0:** *Unknown*
+	- **Shard 1:** October 3, 2020 (0.5501449275362319/s)
+	- **Shard 2:** October 8, 2020 (0.598252688172043/s)
+- **Highest update traffic:**
+	- **Shard 0:** *Unknown*
+	- **Shard 1:** January 4, 2021 (0.05825804957146166/s)
+	- **Shard 2:** December 19, 2020 (0.0311336717428088/s)
+- **Highest delete traffic:**
+	- **Shard 0:** *Unknown*
+	- **Shard 1:** September 17, 2020 (0.00008107482047718323/s)
+	- **Shard 2:** May 30, 2021 (0.00006949270326615705/s)
+- **Highest insert traffic:**
+	- **Shard 0:** *Unknown*
+	- **Shard 1:** September 17, 2020 (0.00015056752374334028/s)
+	- **Shard 2:** August 7, 2020 (0.00015873003275394227/s)
+
 #### Spotify card
 
 <table align="center">
