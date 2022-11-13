@@ -1,4 +1,4 @@
-date (utc),connections,logical size,command (/s),query (/s),update (/s),delete (/s),insert (/s)
+date (utc),logical size,command (/s),query (/s),update (/s),delete (/s),insert (/s)
 "May 15, 2020 at 10:08:41 PM",3.92 KB,???,???,???,???,???
 "May 16, 2020 at 10:08:41 PM",4.00 KB,0.0009490740740740741,0.000011574074074074073,0,0,0
 "May 17, 2020 at 10:09:41 PM",4.00 KB,0.0028221142724959517,0.00004626416840157298,0,0,0
