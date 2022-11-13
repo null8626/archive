@@ -5,6 +5,7 @@ name: cancel
     paths:
       - 'archive/**'
       - 'assets/**'
+      - 'database/**'
 jobs:
   cancel:
     name: cancel
@@ -12,4 +13,4 @@ jobs:
     steps:
     - uses: superbrothers/close-pull-request@v3
       with:
-        comment: "I'm sorry, but we do not accept Pull Requests that modify the `archive` and/or `assets` directory."
+        comment: "I'm sorry, but we do not accept Pull Requests that modify the `archive`, `database`, or `assets` directory."
