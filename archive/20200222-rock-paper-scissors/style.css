@@ -1,0 +1,65 @@
+body {
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align:center;
+                background-color: black;
+            }
+            a {
+                color:#00FFFF;
+            }
+            #copyright {
+                color:white;
+            }
+            #topContext , #doContext {
+                color:white;
+                user-select: none;
+                text-shadow: -3px -3px 5px white -3px 3px 5px white 3px 3px 5px white 3px -3px 5px white;
+            }
+            startPlay , #tryAgain {
+                margin:5px;
+                background-color:white;
+                cursor:pointer;
+                font-size:30px;
+                border-radius: 15px;
+                padding:30px 10px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            startPlay:hover , #tryAgain:hover {
+                transition:0.5s;
+                transform:scale(1.05);
+                color:white;
+                background-color: red;
+                border:3px solid red;
+                box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+            }
+            #pictureLeft {
+                height:200px;
+                float:left;
+                width:175px;
+                background-image: none;
+                background-size:contain;
+                background-repeat: no-repeat;
+            }
+            #tryAgain {
+                visibility:hidden;
+            }
+            #pictureRight {
+                height:200px;
+                width:175px;
+                float:right;
+                background-image:none;
+                background-size:contain;
+                background-repeat: no-repeat;
+            }
+            .image {
+                margin:20px;
+                position:relative;
+                display:inline-block;
+            }
+            #contextLeft {
+                float:left;
+                color:white;
+            }
+            #contextRight {
+                float:right;
+                color:white;
+            }

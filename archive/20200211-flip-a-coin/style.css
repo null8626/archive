@@ -1,0 +1,27 @@
+p {
+    font-size:10px;
+}
+a:visited {
+    color:red;
+}
+#results {
+    font-size:25px;
+    color:black;
+}
+body {
+    font-family:Courier New, monospace;
+    background-color:black;
+    color:white;
+}
+#start {
+    background-color:black;
+    color:white;
+    cursor:pointer;
+    font-size:20px;
+    border:2px solid white;
+    font-family:Courier New, monospace;
+}
+#start:hover {
+    border:2px solid red;
+    color:red;
+}

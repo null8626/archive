@@ -1,0 +1,74 @@
+name: Test
+env:
+  MACOSX_DEPLOYMENT_TARGET: '10.14'
+'on':
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '**'
+    paths:
+      - 'cprintf.c'
+      - 'cprintf.h'
+  pull_request: null
+jobs:
+  build-msvc:
+    name: Build for Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+      - name: CMake
+        run: |
+          cmake -B build .
+          cmake build
+      - name: Build
+        run: |
+          msbuild build/cprintf.sln -noLogo
+  build-macos:
+    name: Build for MacOS 
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: CMake
+        run: |
+          cmake -B build .
+          cmake build
+      - name: Build
+        run: |
+          cd build
+          make
+  build-linux:
+    name: Build for Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: CMake
+        run: |
+          cmake -B build .
+          cmake build
+      - name: Build
+        run: |
+          cd build
+          make
+  prettier:
+    name: Prettier
+    needs:
+      - 'build-msvc'
+      - 'build-macos'
+      - 'build-linux'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prettier C source files!
+        run: clang-format -i *.c
+      - name: Prettier C header files!
+        run: clang-format -i *.h
+      - name: Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'chore: prettier'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,6 @@
+prune .github
+exclude .gitattributes
+exclude .style.yapf
+exclude .gitignore
+exclude LICENSE
+exclude test.py

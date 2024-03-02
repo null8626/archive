@@ -1,0 +1,95 @@
+h1 , h3 , #copyright {
+    color:white;
+    cursor:default;
+    user-select:none;
+}
+#copyright {
+    text-shadow:5px 5px 5px rgba(0, 0, 0, 0.5) , 5px -5px 5px rgba(0, 0, 0, 0.5) , -5px 5px 5px rgba(0, 0, 0, 0.5) , -5px -5px 5px rgba(0, 0, 0, 0.5);
+}
+body {
+	font-family:Montserrat, sans-serif;
+	background-color:gray;
+}
+input {
+    font-family:Roboto, sans-serif;
+}
+.google {
+    background-color:#4285F4;
+}
+.youtube {
+    background-color:#c4302b;
+}
+.wikipedia {
+    background-color:white;
+}
+.cc {
+    background-color:#8a2be2;
+}
+.wikihow {
+    background-color:#93b874;
+}
+.instagram {
+    background-image: linear-gradient(to bottom right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
+}
+.google , .youtube , .wikipedia , .cc , .wikihow , .instagram {
+    padding:20px;
+    border-radius:15px;
+    cursor:default;
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1) , 5px -5px 5px rgba(0, 0, 0, 0.1) , -5px 5px 5px rgba(0, 0, 0, 0.1) , -5px -5px 5px rgba(0, 0, 0, 0.1);
+}
+.google:hover , .youtube:hover , .wikipedia:hover , .cc:hover , .wikihow:hover , .instagram:hover {
+    transition:0.5s;
+    transform:scale(1.02);
+    filter:saturate(75%);
+}
+::placeholder {
+  color:rgba(0, 0, 0, 0.5);
+  opacity: 1; /* Firefox */
+}
+button {
+    font-family:Montserrat, sans-serif;
+}
+#button1 {
+    background-color:rgba(0, 0, 0, 0);
+    border:2px solid black;
+    font-size:20px;
+    cursor:pointer;
+}
+#button {
+    background-color:rgba(0, 0, 0, 0);
+    border:2px solid white;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+#button:hover , #button1:hover {
+    transition:0.5s;
+    background-color:red;
+    border:2px solid red;
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1) , 5px -5px 5px rgba(0, 0, 0, 0.1) , -5px 5px 5px rgba(0, 0, 0, 0.1) , -5px -5px 5px rgba(0, 0, 0, 0.1);
+    color:white;
+    transform:scale(1.05);
+}
+#button:focus , #button1:focus {
+    transition:0.2s;
+    background-color:green;
+    border:2px solid green;
+}
+#inputbox1 , #inputbox2 , #inputbox3 , #inputbox4, #inputbox5 , #inputbox6 {
+    font-size:27.5px;
+    width:300px;
+    background-color:rgba(0, 0, 0, 0);
+    border:2px solid black;
+}
+#inputbox1:hover , #inputbox2:hover , #inputbox3:hover , #inputbox4:hover , #inputbox5:hover , #inputbox6:hover {
+    transition:0.5s;
+    border:2px solid red;
+    transform: scale(1.01);
+}
+#inputbox1:focus , #inputbox2:focus , #inputbox3:focus , #inputbox4:focus , #inputbox5:focus , #inputbox6:focus {
+    transition:0.5s;
+    border:2px solid black;
+    background-color:white;
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1) , 5px -5px 5px rgba(0, 0, 0, 0.1) , -5px 5px 5px rgba(0, 0, 0, 0.1) , -5px -5px 5px rgba(0, 0, 0, 0.1) , 0px 5px 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1.0);
+}

@@ -1,0 +1,14 @@
+body {
+    text-align:center;
+}
+b {
+    text-decoration:underline;
+    cursor:pointer;
+    color:#000FFF;
+}
+b:hover {
+    color:red;
+}
+#textbox {
+    visibility:hidden;
+}

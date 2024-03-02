@@ -1,0 +1,13 @@
+[package]
+name = "npplug-macros"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+lazy_static = "1"
+proc-macro2 = "1"
+syn = { version = "2", features = ["full", "parsing", "proc-macro", "extra-traits"] }
+quote = "1"
