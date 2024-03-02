@@ -1,0 +1,37 @@
+body {
+	background-color:gray;
+	font-family:ubuntu, sans-serif;
+	padding:0;
+	height:100%;
+    margin:0;
+}
+#wrapper{ width: 450px; height: 457px; margin: 0px auto; border:3px solid black; outline-style:solid; outline-color:black; outline-width:2000px; text-align:center;}
+h1 , p {
+    color:white;
+    text-shadow:4px 4px rgba(0, 0, 0, 0.5);
+}
+#ball {
+    text-align:center;
+    animation: bounce 1.25s linear 0s infinite alternate;
+}
+@keyframes bounce {
+    0%   { transform: scale(1.0) translate(0%, 0.5%); }
+    5%   { transform: scale(1.0) translate(0%, 1.05%); }
+    10%   { transform: scale(1.0) translate(0%, 2.1%); }
+    15%   { transform: scale(1.0) translate(0%, 4.21%); }
+    20%   { transform: scale(1.0) translate(0%, 8.4375%); }
+    25%  { transform: scale(1.0) translate(0%, 16.875%); }
+    30%  { transform: scale(1.0) translate(0%, 33.75%); }
+    35%  { transform: scale(1.0) translate(0%, 67.5%) }
+    40%  { transform: scale(1.0) translate(0%, 135%); }
+    50%  { transform: scale(1.0) translate(0%, 270%); }
+    60%  { transform: scale(1.0) translate(0%, 135%); }
+    65%  { transform: scale(1.0) translate(0%, 67.5%) }
+    70%  { transform: scale(1.0) translate(0%, 33.75%); }
+    75%  { transform: scale(1.0) translate(0%, 16.875%); }
+    80%   { transform: scale(1.0) translate(0%, 8.4375%); }
+    85%   { transform: scale(1.0) translate(0%, 4.21%); }
+    90%   { transform: scale(1.0) translate(0%, 2.1%); }
+    95%   { transform: scale(1.0) translate(0%, 1.05%); }
+    100%   { transform: scale(1.0) translate(0%, 0.5%); }
+}

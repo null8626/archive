@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online search</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	</head>
+	<body>
+	    <div style="text-align:center;">
+	        <h1>Online Searcher</h1>
+	        <h3>Now you don't have to surf the internet by opening their homepage! All you have to do is to start all of them from here!</h3>
+	        <div class="google">
+		        <input type="text" placeholder="Google search..." id="inputbox1"/><br><br>
+		        <button onclick="googlesearch();" id="button">Search @Google!</button>
+	        </div><br>
+	        <div class="youtube">
+		        <input type="text" placeholder="YouTube search..." id="inputbox2"/><br><br>
+		        <button onclick="youtubesearch();" id="button">Search @YouTube!</button>
+	        </div><br>
+	        <div class="instagram">
+		        <input type="text" placeholder="Instagram Tag search..." id="inputbox6"/><br><br>
+		        <button onclick="instagramsearch();" id="button">Search Tags @Instagram!</button>
+	        </div><br>
+	        <div class="wikipedia">
+		        <input type="text" placeholder="Wikipedia search..." id="inputbox3"/><br><br>
+		        <button onclick="wikipediasearch();" id="button1">Search @Wikipedia!</button>
+	        </div><br>
+	        <div class="wikihow">
+		        <input type="text" placeholder="WikiHow search..." id="inputbox5"/><br><br>
+		        <button onclick="wikihowsearch();" id="button">Search @WikiHow!</button><br>
+	        </div><br>
+	        <div class="cc">
+		        <input type="text" placeholder="CC search..." id="inputbox4"/><br><br>
+		        <button onclick="ccsearch();" id="button">Search @Creative Commons!</button>
+	        </div><br>
+	        <div onmouseover="copyrightinfo();" onmouseout="tempInfoBack();" id="copyright">[COPYRIGHT INFORMATION]</div>
+	    </div>
+	    <script src="https://adeletedgithubpage.github.io/sources/copyright.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

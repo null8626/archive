@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- PLEASE DO NOT COPY CODE. -->
+<!-- Copyright 2020 null8626. -->
+<html>
+    <head>
+        <title>Welcome to the Math Quiz!</title>
+		<link rel="stylesheet" href="style.css">
+        <!-- JAVASCRIPT CODE HERE -->
+        <script>
+            function endQuiz(points) {                document.title = "Thank you for playing!";
+                document.getElementById('correctSound').play();
+                document.getElementById('headerMain').innerHTML = "The End";
+                document.getElementById('headerSub').innerHTML = "Congratulations! You hit the end of the quiz!";
+                document.querySelector('.guessBar').style.display = "none";
+                document.querySelector('.quizResult').style.visibility = "visible";
+                // DISPLAY THE SCORES
+                document.getElementById('pointsResult').innerHTML = "Points: "+ points;
+            }
+            function mainQuiz(i, p) {
+                document.title = "Math Quiz";
+                var points = p;
+                document.getElementById('guess').value = "";
+                if (i<6) {
+                    var query1 = Math.floor((Math.random() * 10) + 1);
+                    var query2 = Math.floor((Math.random() * 10) + 1);
+                    var sym = Math.floor((Math.random() * 2) + 1);
+                    if (sym==1) {
+                        var symquery = "+";
+                        var result = parseInt(query1)+parseInt(query2);
+                    } else {
+                        var symquery = "-";
+                        var result = parseInt(query1)-parseInt(query2);
+                    }
+                } else if ((i>5)&&(i<11)) {
+                    var query1 = Math.floor((Math.random() * 100) + 1);
+                    var query2 = Math.floor((Math.random() * 100) + 1);
+                    var sym = Math.floor((Math.random() * 2) + 1);
+                    if (sym==1) {
+                        var symquery = "+";
+                        var result = parseInt(query1)+parseInt(query2);
+                    } else {
+                        var symquery = "-";
+                        var result = parseInt(query1)-parseInt(query2);
+                    }
+                } else if ((i>10)&&(i<16)) {
+                    var query1 = Math.floor((Math.random() * 10) + 1);
+                    var query2 = Math.floor((Math.random() * 10) + 1);
+                    var symquery = "x";
+                    var result = parseInt(query1)*parseInt(query2);
+                } else if ((i>15)&&(i<21)) {
+                    var query1 = Math.floor((Math.random() * 25) + 1);
+                    var query2 = Math.floor((Math.random() * 25) + 1);
+                    var symquery = "x";
+                    var result = parseInt(query1)*parseInt(query2);
+                } else if ((i>20)&&(i<26)) {
+                    var query1 = Math.floor((Math.random() * 10) + 1);
+                    var query2 = 2;
+                    var symquery = "^";
+                    var result = parseInt(query1)**parseInt(query2);
+                } else if ((i>25)&&(i<31)) {
+                    var query1 = Math.floor((Math.random() * 10) + 1);
+                    var query2 = 3;
+                    var symquery = "^";
+                    var result = parseInt(query1)**parseInt(query2);
+                }
+                if (i>30) {
+                    endQuiz(p);
+                }
+                var wrongSound = document.getElementById('wrongSound');
+                var guess = document.getElementById('guess');
+                var correctSound = document.getElementById('correctSound');
+                var pointsBox = document.getElementById('points');
+                if ((i>0)&&(i<31)) {
+                    document.getElementById('headerSub').innerHTML = i + ". What is the result of " + query1 + " " + symquery + " " + query2 + "?";
+                }
+                document.getElementById('submit').onclick = function() {
+                    if (guess.value==result) {
+                        pointsBox.style.backgroundColor = "green";
+                        pointsBox.style.color = "white";
+                        var comment = "Correct!";
+                        wrongSound.pause();
+                        correctSound.pause();
+                        correctSound.play();
+                        var points = parseInt(p)+1;
+                    } else if (guess.value=="") {
+                        wrongSound.pause();
+                        correctSound.pause();
+                        wrongSound.play();
+                        var comment = "Nothing is entered.";
+                        pointsBox.style.color = "black";
+                        pointsBox.style.backgroundColor = "yellow";
+                        var points = parseInt(p)+0;
+                    } else {
+                        wrongSound.pause();
+                        correctSound.pause();
+                        wrongSound.play();
+                        var comment = "Incorrect...";
+                        pointsBox.style.color = "white";
+                        pointsBox.style.backgroundColor = "red";
+                        var points = parseInt(p)-1;
+                    }
+                    document.getElementById('points').innerHTML = comment + " Your points: " + points + " Points";
+                    var nextNum = parseInt(i)+1;
+                    mainQuiz(nextNum, points);
+                }
+            }
+            function beginQuiz() {
+                document.getElementById('beginQuiz').style.display = "none";
+                document.getElementById('monoSub').innerHTML = '';
+                document.getElementById('headerMain').innerHTML = "Math Quiz";
+                document.querySelector('.guessBar').style.visibility = "visible";
+                document.getElementById('points').innerHTML = "Your points: 0 Points";
+                // PARAMETERS = NUMBER, POINTS, CORRECT, WRONG, EMPTY;
+                mainQuiz(1, 0, 0, 0, 0);
+            }
+        </script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu%20Mono">
+    </head>
+    <body>
+        <audio id="correctSound">
+            <source src="https://adeletedgithubpage.github.io/sources/crowd_cheer.wav" type="audio/wav">
+        </audio>
+        <audio id="wrongSound">
+            <source src="https://adeletedgithubpage.github.io/sources/crowd_boo.wav" type="audio/wav">
+        </audio>
+        <br><br>
+        <p id="headerMain">Welcome to the math quiz!</p>
+        <p id="headerSub">Hello! my name is <a id="monoSub">NerdBot.</a> I am a bot that generates <a id="monoSub">random</a> math questions. The answers are also random. To begin the quiz, click Begin.</p>
+        <div style="text-align:center;">
+            <button id="beginQuiz" onclick="beginQuiz();">Begin Quiz</button>
+        </div><br>
+        <div style="text-align:center;" class="guessBar">
+            <input type="textbox" id="guess"><br><br><button id="submit">Answer</button>
+            <br><br><br><br>
+            <div id="points"></div>
+        </div>
+        <div class="quizResult">
+            <h3 id="pointsResult"></h3>
+            <div style="text-align: center;">
+                <div id="dontforgettoshare">Don't forget to share your score!</div><br>
+                <button id="submit" onclick="location.reload();">Play again!</button>
+            </div>
+        </div>
+		<script src="script.js"></script>
+    </body>
+</html>

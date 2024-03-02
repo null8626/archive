@@ -1,0 +1,302 @@
+{
+    "main":[
+        {
+            "src":"gd.daily()",
+            "name":"daily",
+            "usage":"Retrives the current daily level.",
+            "format":"class",
+            "parameters":[]
+        },
+        {
+            "src":"gd.weekly()",
+            "name":"weekly",
+            "usage":"Retrives the current weekly level.",
+            "format":"class",
+            "parameters":[]
+        },
+        {
+            "src":"gd.icon({parameters})",
+            "name":"icon",
+            "usage":"Gets an icon of a user.",
+            "format":"link (str)",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"name",
+                    "required":true
+                },
+                {
+                    "type":"str",
+                    "name":"form",
+                    "required":false
+                },
+                {
+                    "type":"str",
+                    "name":"size",
+                    "required":false
+                }
+            ]
+        },
+        {
+            "src":"gd.Comment.getFromLevel({parameters})",
+            "name":"Comment.getFromLevel",
+            "usage":"Retrieves comments from a GD level.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"Level ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Comment.getFromUser({parameters})",
+            "name":"Comment.getFromUser",
+            "usage":"Retrieves comments filtered made by a user.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"User ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Comment.getProfilePosts({parameters})",
+            "name":"Comment.getProfilePosts",
+            "usage":"Retrieves posts from a GD user.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"User ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.analyze({parameters})",
+            "name":"analyze",
+            "usage":"Analyzes a level.",
+            "format":"class",
+            "parameters":[
+                {
+                    "type":"int/str",
+                    "name":"Level ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Leaderboard.topPlayers({parameters})",
+            "name":"topPlayers",
+            "usage":"Gets the current Top players in Geometry Dash.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"count",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.Leaderboard.topCreators({parameters})",
+            "name":"topCreators",
+            "usage":"Gets the current Top creators in Geometry Dash.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"count",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.comment({parameters})",
+            "name":"comment",
+            "usage":"Generates a GD Comment.",
+            "format":"link (str)",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"text",
+                    "required":true
+                },
+                {
+                    "type":"str",
+                    "name":"auth",
+                    "required":true
+                },
+                {
+                    "type":"int",
+                    "name":"likes",
+                    "required":false
+                },
+                {
+                    "type":"str => 'mod', 'elder'",
+                    "name":"mod",
+                    "required":false
+                },
+                {
+                    "type":"boolean",
+                    "name":"uhd",
+                    "required":false
+                },
+                {
+                    "type":"boolean",
+                    "name":"deletable",
+                    "required":false
+                }
+            ]
+        },
+        {
+            "src":"gd.fetchLevel({parameters})",
+            "name":"fetchLevel",
+            "usage":"Fetches a level info from a level ID.",
+            "format":"class",
+            "parameters":[
+                {
+                    "type":"int",
+                    "name":"Level ID",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.fetchProfile({parameters})",
+            "name":"fetchProfile",
+            "usage":"Fetches a profile info from a username.",
+            "format":"class",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"username",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.levelSearch({parameters})",
+            "name":"levelSearch",
+            "usage":"Searches a level and returns their data.",
+            "format":"list of classes",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"query",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.text({parameters})",
+            "name":"text",
+            "usage":"Generates a text using the GD font.",
+            "format":"link (str)",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"text",
+                    "required":true
+                },
+                {
+                    "type":"int/str",
+                    "name":"font",
+                    "required":true
+                },
+                {
+                    "type":"str (without #)",
+                    "name":"hex",
+                    "required":true
+                }
+            ]
+        },
+        {
+            "src":"gd.textbox({parameters})",
+            "name":"textbox",
+            "usage":"Generates a GD dialogue box.",
+            "format":"link (str)",
+            "parameters":[
+                {
+                    "type":"str",
+                    "name":"text",
+                    "required":true
+                },
+                {
+                    "type":"str",
+                    "name":"name",
+                    "required":true
+                },
+                {
+                    "type":"str => purple, blue, brown",
+                    "name":"color",
+                    "required":false
+                },
+                {
+                    "type":"str => gd.Characters",
+                    "name":"char",
+                    "required":true
+                },
+                {
+                    "type":"boolean",
+                    "name":"mobile",
+                    "required":false
+                }
+            ]
+        }
+    ],
+    "char":[
+        {
+            "name":"gd.Characters.Gatekeeper({expressions})",
+            "expressions":[
+                "dark", "normal"
+            ]
+        },
+        {
+            "name":"gd.Characters.Keymaster({expressions})",
+            "expressions":[
+                "huh", "scared", "scream", "normal"
+            ]
+        },
+        {
+            "name":"gd.Characters.Monster({expressions})",
+            "expressions":[
+                "eyes", "normal"
+            ]
+        },
+        {
+            "name":"gd.Characters.Potbor({expressions})",
+            "expressions":[
+                "annoyed", "huh", "mad", "right", "talk", "tired", "normal"
+            ]
+        },
+        {
+            "name":"gd.Characters.Scratch({expressions})",
+            "expressions":[
+                "annoyed", "huh", "mad", "right", "talk", "tired", "normal"
+            ]
+        },
+        {
+            "name":"gd.Characters.Shopkeeper({expressions})",
+            "expressions":[
+                "annoyed", "normal"
+            ]
+        }
+    ],
+    "misc":[
+        {
+            "name":"gd.Characters.Spooky()",
+            "parameters":[]
+        },
+        {
+            "name":"gd.Characters.Custom({url})",
+            "parameters":[
+                "url (str)"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+  cc=gcc
+else
+  cc=$1
+fi
+
+if [ "$cc" = "clang" ]; then
+  ar_cmd=llvm-ar
+else
+  ar_cmd=ar
+fi
+
+cd deps/tcc
+chmod +x ./configure
+./configure --cc=$cc --ar=$ar_cmd --extra-cflags=$extra_cflags
+make all
+mv libtcc.a ../..
+mv libtcc1.a ../..
+cd ../..
+
+make CC=$cc

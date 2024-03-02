@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web calculator (TM)</title>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    </head>
+    <body>
+        <p id='main'>Calculator</p>
+        <div class='calc'>
+            <button onclick='addnum(1);' id='nums'>1</button>
+            <button onclick='addnum(2);' id='nums'>2</button>
+            <button onclick='addnum(3);' id='nums'>3</button>
+            <button onclick='addnum("+");' id='nums'>+</button>
+            <button onclick='addnum("×");' id='nums'>×</button><br><br>
+            <button onclick='addnum(4);' id='nums'>4</button>
+            <button onclick='addnum(5);' id='nums'>5</button>
+            <button onclick='addnum(6);' id='nums'>6</button>
+            <button onclick='addnum("-");' id='nums'>-</button>
+            <button onclick='addnum("÷");' id='nums'>÷</button><br><br>
+            <button onclick='addnum(7);' id='nums'>7</button>
+            <button onclick='addnum(8);' id='nums'>8</button>
+            <button onclick='addnum(9);' id='nums'>9</button>
+            <button onclick='addnum(0);' id='nums'>0</button>
+            <button onclick='document.getElementById("main").innerHTML = "";' id='nums'>C</button><br><br>
+            <button onclick='addnum("^");' id='nums'>^</button>
+            <button onclick='execute();' id='equa'>=</button>
+        </div>
+    </body>
+</html>

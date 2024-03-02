@@ -1,0 +1,10 @@
+**/*.o
+**/*.a
+**/*.lib
+**/.vscode/
+**/*.node
+main.d.ts
+main.js
+index.js
+package-lock.json
+node_modules/
