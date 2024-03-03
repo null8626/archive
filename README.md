@@ -231,7 +231,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/699238761711665222/793820645427118100/Screenshot_20201230-193916_Chrome.jpg" width="360px;" height="733px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201230-username601.jpg" width="360px;" height="733px;" alt=""/>
         <br />
         <p>the infamous spinny <a href="https://top.gg">top.gg</a> page (30 December 2020)</p>
       </td>
@@ -240,7 +240,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/722752725267382323/794115016130560000/unknown.png" width="490px;" height="347px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201231-username601.png" width="490px;" height="347px;" alt=""/>
         <br />
         <p>the infamous spinny <a href="https://top.gg">top.gg</a> page (31 December 2020)</p>
       </td>
@@ -252,7 +252,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/704061127096664074/783171262435557406/level.png" width="400px;" height="320px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201201-username601.png" width="400px;" height="320px;" alt=""/>
         <br />
         <p>output of a geometry dash command that fetches the current weekly demon (1 December 2020)</p>
       </td>
@@ -295,9 +295,9 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601.png" width="455px;" height="256px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601-1.png" width="455px;" height="256px;" alt=""/>
         <br />
-		<img src="https://cdn.discordapp.com/attachments/704061031500218392/715146951976419328/unknown.png" width="455px;" height="256px;" alt=""/>
+		<img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200527-username601-2.png" width="455px;" height="256px;" alt=""/>
         <br />
         <p>27 May 2020</p>
       </td>
@@ -321,7 +321,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/748190477760725062/spotify.png" width="350px;" height="350px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200826-username601.png" width="350px;" height="350px;" alt=""/>
         <br />
         <p>26 August 2020</p>
       </td>
@@ -330,7 +330,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/752919918030094406/spotify.png" width="421px;" height="93px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200808-username601.png" width="421px;" height="93px;" alt=""/>
         <br />
         <p>8 September 2020</p>
       </td>
@@ -339,7 +339,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/771664030447435776/spotify.png" width="340px;" height="100px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201030-username601.png" width="340px;" height="100px;" alt=""/>
         <br />
         <p>30 October 2020</p>
       </td>
@@ -353,7 +353,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/740948234242883684/profile.png" width="426px;" height="240px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200806-username601-1.png" width="426px;" height="240px;" alt=""/>
         <br />
         <p>6 August 2020</p>
       </td>
@@ -362,7 +362,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/749221068774047844/profile.png" width="382px;" height="300px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200829-username601.png" width="382px;" height="300px;" alt=""/>
         <br />
         <p>29 August 2020</p>
       </td>
@@ -371,7 +371,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/704061127096664074/790160548029136896/card.png" width="350px;" height="95px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201220-username601.png" width="350px;" height="95px;" alt=""/>
         <br />
         <p>20 December 2020</p>
       </td>
@@ -385,7 +385,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/740159067695218728/Discord_Bot_List.png" width="452px;" height="153px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200804-username601.png" width="452px;" height="153px;" alt=""/>
         <br />
         <p>4 August 2020</p>
       </td>
@@ -394,7 +394,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/748873808890429460/server.png" width="413px;" height="320px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200828-username601.png" width="413px;" height="320px;" alt=""/>
         <br />
         <p>28 August 2020</p>
       </td>
@@ -403,9 +403,9 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/704061127096664074/788459641201229844/688373853889495044.png" width="433px;" height="112px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201216-username601.png" width="433px;" height="112px;" alt=""/>
         <br />
-        <p>15 December 2020</p>
+        <p>16 December 2020</p>
       </td>
     </tr>
   </tbody>
@@ -417,7 +417,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/740877075556335636/8626.png" width="333px;" height="143px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200806-username601-2.png" width="333px;" height="143px;" alt=""/>
         <br />
         <p>6 August 2020</p>
       </td>
@@ -426,7 +426,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/748520546550939648/7777.png" width="400px;" height="357px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200827-username601.png" width="400px;" height="357px;" alt=""/>
         <br />
         <p>27 August 2020</p>
       </td>
@@ -435,9 +435,9 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/265156286406983680/789567896186650634/card.png" width="374px;" height="92px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201219-username601.png" width="374px;" height="92px;" alt=""/>
         <br />
-        <p>17 December 2020</p>
+        <p>19 December 2020</p>
       </td>
     </tr>
   </tbody>
