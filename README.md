@@ -191,11 +191,11 @@ module.exports.config = {
       <td align="center">
         <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200407-username601.png" width="150px;" alt=""/>
         <br />
-        <p>profile picture (7 April – 22 May 2020)</p>
+        <p>profile picture (until 22 May 2020)</p>
       </td>
       <td align="center">
         <img src="https://raw.githubusercontent.com/null8626/archive/main/archive/20200407-username601/assets/pics/pfp.png" width="150px;" alt=""/>
-        <p>profile picture (22 May 2020 – 20 January 2022)</p>
+        <p>profile picture (from 22 May 2020)</p>
       </td>
       <td align="center">
         <img src="https://www.boxed-up.co.uk/image/cache/data/international-post-box-350x350.png" width="150px;" alt=""/>
@@ -426,7 +426,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200827-username601.png" width="400px;" height="357px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200827-username601.png" width="600px;" height="386px;" alt=""/>
         <br />
         <p>27 August 2020</p>
       </td>
