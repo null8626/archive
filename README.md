@@ -330,7 +330,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200808-username601.png" width="421px;" height="93px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200908-username601.png" width="421px;" height="93px;" alt=""/>
         <br />
         <p>8 September 2020</p>
       </td>
@@ -339,9 +339,9 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201030-username601.png" width="340px;" height="100px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20201230-username601.png" width="340px;" height="100px;" alt=""/>
         <br />
-        <p>30 October 2020</p>
+        <p>30 December 2020</p>
       </td>
     </tr>
   </tbody>
@@ -442,25 +442,6 @@ module.exports.config = {
     </tr>
   </tbody>
 </table>
-
-#### Reviews
-
-- Not all reviews are listed here. This is just the first page at the time of the bot's deletion.
-- Every review listed here gives a 5 star rating. (No, i did not filter out the negative ones.)
-
-| Reviewer | Review date | Review | Reply |
-|---|---|---|---|
-| [norizon](https://top.gg/user/8723421806292828160) | 5 November 2020 | *I like to explode people's head* | *ah i see thank you for enjoying our explode command :^)* |
-| [davon](https://top.gg/user/8422266759003439104) | 11 December 2020 | *good work!* | *thanks man!* |
-| [jaffadev](https://top.gg/user/7689549961838133248) | 13 December 2020 | *OMG THIS IS THE BEST BOT EVER MATE IT SO PERFECT AAAAAAAAAAA I LOVE YOU NULL#8626 OWO<br /><br />No but on a serious note, the bot is definitely worth it. You should definitely invite as it has many features and is all around great to use!<br /><br />You have really outdone yourself on this bot null. 💝* | *thanks qt* |
-| [AshtonMemer](https://top.gg/user/7772680608630374400) | 31 December 2020 | *if you like memes, economy, and funny images, then get this bot. if you don't like memes, economy, or funny images, then get this bot.* | *lmaoo thanks ashton* |
-| [WilloIzCitron](https://top.gg/user/8333103529996255232) | 31 December 2020 | *all image is spinning now i like it* | *nice* |
-| [flazepe](https://top.gg/user/7632495051489869824) | 1 January 2021 | *good bot for image generation and other multipurpose commands. i can tell that this was 100% made with effort* | *thanks and yes i love your sarcasm* |
-| [Matthew.](https://top.gg/user/7669402925235109888) | 3 January 2021 | *i like :yes:* | *:yes:* |
-| [MILLION](https://top.gg/user/3550838723584915004) | 11 January 2021 | *So much better than mee6* | *so true* |
-| [alexcool](https://top.gg/user/7687843929961201664) | 2 February 2021 | *this bot page is inside a washing machine<br />also good bot 10/10 would recommend* | *thanks xd* |
-| [ar](https://top.gg/user/1459010777929940992) | 6 March 2021 | *im reviewing because i want my face spinned here forever<br />also, yea, the bot is very cool too, i've been using it for a very long time :)* | *thank you!* |
-
 </details>
 <details>
 <summary>news.js (2021)</summary>
