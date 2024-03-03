@@ -426,7 +426,7 @@ module.exports.config = {
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200827-username601.png" width="600px;" height="386px;" alt=""/>
+        <img src="https://raw.githubusercontent.com/null8626/archive/main/assets/20200827-username601.png" width="400px;" height="257px;" alt=""/>
         <br />
         <p>27 August 2020</p>
       </td>
