@@ -50,6 +50,7 @@ List of projects i no longer maintain in chronological order. Small scripts i've
 | [sus](https://github.com/null8626/archive/tree/main/archive/20220428-sus) | 28 April – 13 July 2022 | C | Console application |
 | fast-fail | 5 May – 13 July 2022 | TypeScript | Library |
 | [sensitive-test](https://pypi.org/project/sensitive-test/) | 5 May 2022 | Python | Library |
+| [topgg](https://github.com/Top-gg-Community/rust-sdk) | 2 April 2023 – 26 March 2024 | Rust | Library |
 | [npplug](https://github.com/null8626/archive/tree/main/archive/20240112-npplug)\* | 12–14 January 2024 | Rust | Library |
 
 \* This project was never made public throughout its lifetime.
