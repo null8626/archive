@@ -32,7 +32,7 @@ List of projects i no longer maintain in chronological order. Small scripts i've
 | [TerminalPad](https://github.com/null8626/archive/tree/main/archive/20200922-TerminalPad)\* | 22–23 September 2020 | C# | Console application |
 | [twemoji-parser](https://github.com/null8626/archive/tree/main/archive/20201111-twemoji-parser) | 11 November 2020 – 10 June 2021 | Python | Library |
 | news.js | 23 January – 10 June 2021 | JavaScript | Library |
-| [bmkg](https://github.com/null8626/bmkg) | 23 January 2021 – 16 June 2023 | Python | Library |
+| [bmkg](https://github.com/null8626/archive/tree/main/archive/20210123-bmkg) | 23 January 2021 – 16 June 2023 | Python | Library |
 | [discord-bot-lib](https://github.com/null8626/archive/tree/main/archive/20210403-discord-bot-lib) | 3 April 2021 – 12 July 2022 | JavaScript | Library |
 | Anime Luca | 22 April – 5 November 2021 | JavaScript | Discord bot |
 | [animality-py](https://pypi.org/project/animality-py) | 14 May – 16 June 2021 | Python | Library |
