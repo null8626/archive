@@ -35,10 +35,12 @@ List of projects i no longer maintain in chronological order. Small scripts i've
 | [bmkg](https://github.com/null8626/bmkg) | 23 January 2021 – 16 June 2023 | Python | Library |
 | [discord-bot-lib](https://github.com/null8626/archive/tree/main/archive/20210403-discord-bot-lib) | 3 April 2021 – 12 July 2022 | JavaScript | Library |
 | Anime Luca | 22 April – 5 November 2021 | JavaScript | Discord bot |
+| [animality-py](https://pypi.org/project/animality-py) | 14 May – 16 June 2021 | Python | Library |
 | brainly | 13–14 June 2021 | Python | Library |
 | simple-windows-gui | 13–24 July 2021 | JavaScript, C++ | Library |
 | [string_toolkit.h](https://github.com/null8626/archive/tree/main/archive/20210722-string-toolkit) | 22 July – 3 October 2021 | C | Library |
 | [string-toolkit](https://github.com/null8626/archive/tree/main/archive/20210722-string-toolkit) | 26 July – 3 August 2021 | Python | Library |
+| [animality.h](https://github.com/animality-xyz/animality.h) | 7–22 August 2021 | C | Library |
 | topgg-cpp-sdk | 15 September – 17 November 2021 | C++ | Library |
 | [jsfuck](https://github.com/null8626/archive/tree/main/archive/20211009-jsfuck) | 9 October 2021 – 10 September 2022 | C | Library |
 | [cprintf](https://github.com/null8626/archive/tree/main/archive/20211009-cprintf) | 9 October 2021 – 13 March 2023 | C | Library |
@@ -49,7 +51,8 @@ List of projects i no longer maintain in chronological order. Small scripts i've
 | weather-cli\* | 8 March – 13 July 2022 | Rust | Console application |
 | [sus](https://github.com/null8626/archive/tree/main/archive/20220428-sus) | 28 April – 13 July 2022 | C | Console application |
 | fast-fail | 5 May – 13 July 2022 | TypeScript | Library |
-| [sensitive-test](https://pypi.org/project/sensitive-test/) | 5 May 2022 | Python | Library |
+| [sensitive-test](https://pypi.org/project/sensitive-test/) | 5 May 2022 – 19 April 2024 | Python | Library |
+| [animality.rs](https://github.com/animality-xyz/animality.rs) | 23–24 June 2022 | Rust | Library |
 | [topgg](https://github.com/Top-gg-Community/rust-sdk) | 2 April 2023 – 27 March 2024 | Rust | Library |
 | [npplug](https://github.com/null8626/archive/tree/main/archive/20240112-npplug)\* | 12–14 January 2024 | Rust | Library |
 
