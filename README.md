@@ -1,5 +1,5 @@
 # archive
-Archival of the projects i no longer maintain.
+Archive of the projects i no longer maintain.
 
 A few things to note before exploring this repository is that the projects in this repo are:
 - only some that i think is okay to be shown to the public.
