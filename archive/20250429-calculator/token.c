@@ -53,7 +53,7 @@ static const char g_calculator_function_names[][5] = {
   { 'l', 'o', 'g', '1', '0' }
 };
 
-static calculator_function_t g_calculator_functions[] = {
+static const calculator_function_t g_calculator_functions[] = {
   calculator_abs,
   calculator_rad,
   sin,
