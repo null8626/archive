@@ -60,7 +60,7 @@ List of projects i no longer maintain in chronological order. Small scripts i've
 | screenlapse\* | 24 July – 14 August 2024 | C++, Rust | Graphical application |
 | [jumpcutter](https://github.com/null8626/archive/tree/main/archive/20240815-jumpcutter)\* | 15–20 August 2024 | C | Console application |
 | obs-jumpcutter\* | 31 August – 1 September 2024 | C | Plugin |
-| [calculator](https://github.com/null8626/archive/tree/main/archive/20250429-calculator)\* | 29 April 2025 | C | Library |
+| [calculator](https://github.com/null8626/archive/tree/main/archive/20250429-calculator)\* | 29–30 April 2025 | C | Library |
 
 \* This project was never made public throughout its lifetime.
 
