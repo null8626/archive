@@ -34,6 +34,8 @@ static calculator_number_t calculator_cot(const calculator_number_t x) {
 }
 
 static const char g_calculator_function_names[][5] = {
+  { 's', 'q', 'r', 't', '\0' },
+  { 'c', 'b', 'r', 't', '\0' },
   { 'a', 'b', 's', '\0', '\0' },
   { 'r', 'a', 'd', '\0', '\0' },
   { 's', 'i', 'n', '\0', '\0' },
@@ -54,6 +56,8 @@ static const char g_calculator_function_names[][5] = {
 };
 
 static const calculator_function_t g_calculator_functions[] = {
+  sqrt,
+  cbrt,
   calculator_abs,
   calculator_rad,
   sin,
