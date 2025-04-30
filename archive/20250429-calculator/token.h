@@ -41,7 +41,7 @@ typedef union {
   } operator;
   calculator_token_decimal_length_t decimal_length;
   struct {
-    uint16_t candidate_bits;
+    uint32_t candidate_bits;
     calculator_token_identifier_index_t character_search_index;
   } identifier;
 } calculator_token_additional_data_t;

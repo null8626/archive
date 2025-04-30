@@ -33,7 +33,7 @@ static calculator_number_t calculator_cot(const calculator_number_t x) {
   return cot_result == 0 ? CALCULATOR_INVALID_NUMBER : 1.0 / cot_result;
 }
 
-static const char g_calculator_function_names[16][5] = {
+static const char g_calculator_function_names[][5] = {
   { 'a', 'b', 's', '\0', '\0' },
   { 'r', 'a', 'd', '\0', '\0' },
   { 's', 'i', 'n', '\0', '\0' },
@@ -46,13 +46,14 @@ static const char g_calculator_function_names[16][5] = {
   { 's', 'e', 'c', '\0', '\0' },
   { 'c', 'o', 't', '\0', '\0' },
   { 'f', 'l', 'o', 'o', 'r' },
+  { 't', 'r', 'u', 'n', 'c' },
   { 'c', 'e', 'i', 'l', '\0' },
   { 'r', 'o', 'u', 'n', 'd' },
   { 'l', 'o', 'g', '2', '\0' },
   { 'l', 'o', 'g', '1', '0' }
 };
 
-static calculator_function_t g_calculator_functions[16] = {
+static calculator_function_t g_calculator_functions[] = {
   calculator_abs,
   calculator_rad,
   sin,
@@ -65,6 +66,7 @@ static calculator_function_t g_calculator_functions[16] = {
   calculator_sec,
   calculator_cot,
   floor,
+  trunc,
   ceil,
   round,
   log2,
@@ -89,9 +91,9 @@ static int8_t calculator_token_check_identifier(calculator_token_t* const token,
   }
 
   uint8_t left = sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]);
-  uint16_t last_found_index;
+  uint32_t last_found_index;
 
-  for (uint16_t i = 0; i < sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]); i++) {
+  for (uint32_t i = 0; i < sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]); i++) {
     const char function_ident_char = g_calculator_function_names[i][token->additional_data.identifier.character_search_index];
 
     if (function_ident_char != '\0' && (token->additional_data.identifier.candidate_bits & (1 << i)) != 0) {
@@ -161,7 +163,7 @@ calculator_token_feed_status_t calculator_token_feed(calculator_token_t* const t
           } else if (calculator_token_is_alphabetical(c)) {
             token->data.identifier_index = CALCULATOR_INVALID_IDENTIFIER_INDEX;
             token->type = CALCULATOR_TOKEN_TYPE_IDENTIFIER;
-            token->additional_data.identifier.candidate_bits = (uint16_t)((uint32_t)(1 << (sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]))) - 1);
+            token->additional_data.identifier.candidate_bits = (uint32_t)(1 << (sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]))) - 1;
 
             return calculator_token_check_identifier(token, c) == CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES ? CALCULATOR_TOKEN_FEED_FATAL_ERROR : CALCULATOR_TOKEN_FEED_SUCCESSFUL;
           }
