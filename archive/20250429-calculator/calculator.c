@@ -8,13 +8,17 @@ typedef uint8_t calculator_tokenization_flag_t;
 #define CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND 1
 #define CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE 2
 
+#define CALCULATOR_STATE_NEXT_OP_BINARY 0
+#define CALCULATOR_STATE_NEXT_OP_UNARY 1
+#define CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER 2
+
 bool calculator_new(calculator_t* const calculator) {
   return calculator_stack_new(&calculator->results, sizeof(calculator_number_t)) && calculator_stack_new(&calculator->operators, sizeof(calculator_token_t));
 }
 
 static bool calculator_compute_postfix_token(calculator_t* const calculator, const calculator_token_t* const token) {
   if (calculator_token_is_operand(token)) {
-    if (token->data == CALCULATOR_INVALID_NUMBER) {
+    if (token->data.number == CALCULATOR_INVALID_NUMBER) {
       return false;
     }
 
@@ -29,7 +33,7 @@ static bool calculator_compute_postfix_token(calculator_t* const calculator, con
 
   calculator_number_t result;
 
-  switch ((char)token->data) {
+  switch (token->data.character) {
     case '+': {
       result = a + b;
       break;
@@ -72,23 +76,26 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
   
   if (calculator_token_is_operand(token)) {
     // Incomplete decimal number, e.g: .
-    if (token->data == CALCULATOR_INVALID_NUMBER) {
+    if (token->data.number == CALCULATOR_INVALID_NUMBER) {
       return false;
     } else if (next_is_negative) {
       // Negative number, e.g: -5
-      token->data = -token->data;
+      token->data.number = -token->data.number;
     }
 
     calculator->state = CALCULATOR_STATE_NEXT_OP_BINARY;
 
     return calculator_compute_postfix_token(calculator, token);
+  } else if (token->type == CALCULATOR_TOKEN_TYPE_IDENTIFIER) {
+    // Identifiers should not be in here
+    return false;
   }
 
-  switch ((char)token->data) {
+  switch (token->data.character) {
     case '(': {
       // -(2 + 5), mark this entire bracket's computation result as negative
       if (next_is_negative) {
-        token->additional_data.negative = true;
+        token->additional_data.operator.subtype = CALCULATOR_TOKEN_OPERATOR_SUBTYPE_NEGATIVE_BRACKET;
       }
 
       calculator->state = CALCULATOR_STATE_NEXT_OP_UNARY;
@@ -106,22 +113,37 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
 
       calculator_token_new(&operator);
 
-      while (calculator_stack_pop(&calculator->operators, &operator) && (char)operator.data != '(') {
+      while (calculator_stack_pop(&calculator->operators, &operator) && operator.data.character != '(') {
         if (!calculator_compute_postfix_token(calculator, &operator)) {
           return false;
         }
       }
 
       // 2 + 5) is not valid
-      if ((char)operator.data != '(') {
+      if (operator.data.character != '(') {
         return false;
-      } else if (operator.additional_data.negative) {
-        calculator_number_t* const result = (calculator_number_t*)calculator_stack_peek(&calculator->results);
+      }
 
-        if (result == NULL) {
+      calculator_number_t* const result = (calculator_number_t*)calculator_stack_peek(&calculator->results);
+
+      if (result == NULL) {
+        return false;
+      }
+
+      // Evaluate identifier functions
+      if (operator.additional_data.operator.identifier_index != CALCULATOR_INVALID_IDENTIFIER_INDEX) {
+        calculator_function_t function = calculator_token_get_function(operator.additional_data.operator.identifier_index);
+        const calculator_number_t function_result = function(*result);
+
+        if (function_result == CALCULATOR_INVALID_NUMBER) {
           return false;
         }
 
+        *result = function_result;
+      }
+      
+      // If bracket is negative, make it negative
+      if (operator.additional_data.operator.subtype == CALCULATOR_TOKEN_OPERATOR_SUBTYPE_NEGATIVE_BRACKET) {
         *result = -*result;
       }
 
@@ -132,7 +154,7 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
 
     case '-': {
       if (calculator->state == CALCULATOR_STATE_NEXT_OP_UNARY) {
-        token->additional_data.unary = true;
+        token->additional_data.operator.subtype = CALCULATOR_TOKEN_OPERATOR_SUBTYPE_UNARY_NEGATIVE;
         calculator->state = CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER;
 
         break;
@@ -154,7 +176,7 @@ CALCULATOR_HANDLE_INFIX_OPERATOR_TOKEN:
       const calculator_token_precedence_t token_precedence = calculator_token_precedence(token);
       calculator_token_t* operator;
 
-      while ((operator = (calculator_token_t*)calculator_stack_peek(&calculator->operators)) != NULL && (char)operator->data != '(' && token_precedence <= calculator_token_precedence(operator)) {
+      while ((operator = (calculator_token_t*)calculator_stack_peek(&calculator->operators)) != NULL && operator->data.character != '(' && token_precedence <= calculator_token_precedence(operator)) {
         if (!calculator_compute_postfix_token(calculator, operator)) {
           return false;
         }
@@ -174,7 +196,7 @@ static bool calculator_compute_infix_multiplication(calculator_t* const calculat
 
   calculator_token_new(&token);
 
-  token.data = (calculator_token_data_t)('*');
+  token.data.character = '*';
   token.type = CALCULATOR_TOKEN_TYPE_OPERATOR;
 
   return calculator_compute_infix_token(calculator, &token);
@@ -222,11 +244,11 @@ calculator_number_t calculator_compute(calculator_t* const calculator, const cha
         break;
       }
 
-      case CALCULATOR_TOKEN_FEED_ANOTHER_TOKEN: {
+      case CALCULATOR_TOKEN_FEED_TRY_AGAIN: {
         calculator_token_new(&replacement_token);
 
         // Same thing, most possibly an invalid character/syntax
-        if (calculator_token_feed(&replacement_token, c) == CALCULATOR_TOKEN_FEED_ANOTHER_TOKEN) {
+        if (calculator_token_feed(&replacement_token, c) == CALCULATOR_TOKEN_FEED_TRY_AGAIN) {
           return CALCULATOR_INVALID_NUMBER;
         }
         

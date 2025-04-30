@@ -7,11 +7,6 @@
 
 #define CALCULATOR_INVALID_NUMBER DBL_MAX
 
-#define CALCULATOR_STATE_NEXT_OP_BINARY 0
-#define CALCULATOR_STATE_NEXT_OP_UNARY 1
-#define CALCULATOR_STATE_NEXT_DECIMAL_POINT 2
-#define CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER 3
-
 typedef uint8_t calculator_state_t;
 typedef double calculator_number_t;
 
