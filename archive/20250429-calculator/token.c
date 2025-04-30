@@ -65,6 +65,10 @@ calculator_token_feed_status_t calculator_token_feed(calculator_token_t* const t
         token->type = CALCULATOR_TOKEN_TYPE_DECIMAL_OPERAND;
 
         return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
+      } else if (c == '%') {
+        token->data = token->data / 100.0;
+
+        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
       }
 
       break;
@@ -86,7 +90,13 @@ calculator_token_feed_status_t calculator_token_feed(calculator_token_t* const t
       } else if (calculator_token_is_decimal_point(c)) {
         // .. is not valid
         return CALCULATOR_TOKEN_FEED_FATAL_ERROR;
+      } else if (c == '%') {
+        token->data = token->data / 100.0;
+
+        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
       }
+
+      break;
     }
 
     case CALCULATOR_TOKEN_TYPE_OPERATOR: {
