@@ -2,8 +2,6 @@
 
 #include <math.h>
 
-typedef uint8_t calculator_tokenization_flag_t;
-
 #define CALCULATOR_TOKENIZATION_FLAG_NORMAL 0
 #define CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND 1
 #define CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE 2
@@ -11,6 +9,8 @@ typedef uint8_t calculator_tokenization_flag_t;
 #define CALCULATOR_STATE_NEXT_OP_BINARY 0
 #define CALCULATOR_STATE_NEXT_OP_UNARY 1
 #define CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER 2
+
+typedef uint8_t calculator_tokenization_flag_t;
 
 bool calculator_new(calculator_t* const calculator) {
   return calculator_stack_new(&calculator->results, sizeof(calculator_number_t)) && calculator_stack_new(&calculator->operators, sizeof(calculator_token_t));
@@ -135,7 +135,7 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
         calculator_function_t function = calculator_token_get_function(operator.additional_data.operator.identifier_index);
         const calculator_number_t function_result = function(*result);
 
-        if (function_result == CALCULATOR_INVALID_NUMBER) {
+        if (isnan(function_result) || function_result == CALCULATOR_INVALID_NUMBER) {
           return false;
         }
 

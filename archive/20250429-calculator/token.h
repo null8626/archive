@@ -27,6 +27,7 @@ typedef uint8_t calculator_token_decimal_length_t;
 typedef int8_t calculator_token_precedence_t;
 typedef uint8_t calculator_token_feed_status_t;
 typedef uint8_t calculator_token_identifier_index_t;
+typedef uint32_t calculator_token_identifier_candidate_bits_t;
 
 typedef union {
   calculator_number_t number;
@@ -41,7 +42,7 @@ typedef union {
   } operator;
   calculator_token_decimal_length_t decimal_length;
   struct {
-    uint32_t candidate_bits;
+    calculator_token_identifier_candidate_bits_t candidate_bits;
     calculator_token_identifier_index_t character_search_index;
   } identifier;
 } calculator_token_additional_data_t;

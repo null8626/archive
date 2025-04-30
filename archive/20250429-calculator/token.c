@@ -95,9 +95,9 @@ static int8_t calculator_token_check_identifier(calculator_token_t* const token,
   }
 
   uint8_t left = sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]);
-  uint32_t last_found_index;
+  calculator_token_identifier_candidate_bits_t last_found_index;
 
-  for (uint32_t i = 0; i < sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]); i++) {
+  for (calculator_token_identifier_candidate_bits_t i = 0; i < sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]); i++) {
     const char function_ident_char = g_calculator_function_names[i][token->additional_data.identifier.character_search_index];
 
     if (function_ident_char != '\0' && (token->additional_data.identifier.candidate_bits & (1 << i)) != 0) {
@@ -167,7 +167,7 @@ calculator_token_feed_status_t calculator_token_feed(calculator_token_t* const t
           } else if (calculator_token_is_alphabetical(c)) {
             token->data.identifier_index = CALCULATOR_INVALID_IDENTIFIER_INDEX;
             token->type = CALCULATOR_TOKEN_TYPE_IDENTIFIER;
-            token->additional_data.identifier.candidate_bits = (uint32_t)(1 << (sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]))) - 1;
+            token->additional_data.identifier.candidate_bits = (calculator_token_identifier_candidate_bits_t)(1 << (sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]))) - 1;
 
             return calculator_token_check_identifier(token, c) == CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES ? CALCULATOR_TOKEN_FEED_FATAL_ERROR : CALCULATOR_TOKEN_FEED_SUCCESSFUL;
           }
