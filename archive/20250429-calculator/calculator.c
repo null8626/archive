@@ -88,7 +88,7 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
     case '(': {
       // -(2 + 5), mark this entire bracket's computation result as negative
       if (next_is_negative) {
-        token->type = CALCULATOR_TOKEN_TYPE_NEGATIVE_BRACKET;
+        token->additional_data.negative = true;
       }
 
       calculator->state = CALCULATOR_STATE_NEXT_OP_UNARY;
@@ -115,7 +115,7 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
       // 2 + 5) is not valid
       if ((char)operator.data != '(') {
         return false;
-      } else if (operator.type == CALCULATOR_TOKEN_TYPE_NEGATIVE_BRACKET) {
+      } else if (operator.additional_data.negative) {
         calculator_number_t* const result = (calculator_number_t*)calculator_stack_peek(&calculator->results);
 
         if (result == NULL) {
@@ -132,6 +132,7 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
 
     case '-': {
       if (calculator->state == CALCULATOR_STATE_NEXT_OP_UNARY) {
+        token->additional_data.unary = true;
         calculator->state = CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER;
 
         break;
@@ -218,14 +219,6 @@ calculator_number_t calculator_compute(calculator_t* const calculator, const cha
           flag = CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE;
         }
 
-        break;
-      }
-
-      // -- cancels out
-      case CALCULATOR_TOKEN_FEED_CANCELS_OUT: {
-        // Rebuild brand new token
-        calculator_token_new(&token);
-        
         break;
       }
 
