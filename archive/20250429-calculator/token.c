@@ -1,11 +1,8 @@
 #include "token.h"
 
-#include <string.h>
-#include <ctype.h>
 #include <math.h>
 
-#define CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES -2
-#define CALCULATOR_TOKEN_CHECK_IDENTIFIER_REDUCED_MATCHES -1
+typedef uint32_t calculator_token_identifier_candidate_bits_t;
 
 static calculator_number_t calculator_abs(const calculator_number_t x) {
   return x < 0 ? -x : x;
@@ -77,195 +74,99 @@ static const calculator_function_t g_calculator_functions[] = {
   log10,
 };
 
-static inline bool calculator_token_is_alphabetical(const char c) {
-  return c >= 'a' && c <= 'z';
-}
+calculator_function_t calculator_token_parse_function_call(const char** expression) {
+  static const uint8_t calculator_function_count = sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]);
 
-static inline bool calculator_token_is_numeric(const char c) {
-  return c >= '0' && c <= '9';
-}
+  calculator_token_identifier_candidate_bits_t candidate_bits = (calculator_token_identifier_candidate_bits_t)(1 << (sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]))) - 1;
+  uint8_t character_search_index = 0;
 
-static inline bool calculator_token_is_decimal_point(const char c) {
-  return c == '.' || c == ',';
-}
+  while (true) {
+    const char c = *((*expression)++);
+    uint8_t left = calculator_function_count;
 
-static int8_t calculator_token_check_identifier(calculator_token_t* const token, const char c) {
-  if (token->additional_data.identifier.character_search_index == sizeof(g_calculator_function_names[0])) {
-    return CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES;
-  }
-
-  uint8_t left = sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]);
-  calculator_token_identifier_candidate_bits_t last_found_index;
-
-  for (calculator_token_identifier_candidate_bits_t i = 0; i < sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]); i++) {
-    const char function_ident_char = g_calculator_function_names[i][token->additional_data.identifier.character_search_index];
-
-    if (function_ident_char != '\0' && (token->additional_data.identifier.candidate_bits & (1 << i)) != 0) {
-      if (function_ident_char == c) {
-        last_found_index = i;
-        continue;
-      } else {
-        token->additional_data.identifier.candidate_bits ^= (1 << i);
-      }
-    }
-
-    left--;
-  }
-
-  token->additional_data.identifier.character_search_index++;
-
-  if (left == 0) {
-    return CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES;
-  } else if (left == 1) {
-    return (int8_t)last_found_index;
-  }
-
-  return CALCULATOR_TOKEN_CHECK_IDENTIFIER_REDUCED_MATCHES;
-}
-
-void calculator_token_new(calculator_token_t* const token) {
-  memset(token, 0, sizeof(calculator_token_t));
-}
-
-calculator_function_t calculator_token_get_function(const uint8_t identifier_index) {
-  return g_calculator_functions[identifier_index];
-}
-
-calculator_token_feed_status_t calculator_token_feed(calculator_token_t* const token, const char c) {
-  switch (token->type) {
-    case CALCULATOR_TOKEN_TYPE_NULL: {
-      switch (c) {
-        case '+':
-        case '-':
-        case '*':
-        case '/':
-        case '^':
-        case '(':
-        case ')': {
-          token->data.character = c;
-          token->type = CALCULATOR_TOKEN_TYPE_OPERATOR;
-          token->additional_data.operator.identifier_index = CALCULATOR_INVALID_IDENTIFIER_INDEX;
-
-          return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-        }
+    for (uint8_t i = 0; i < calculator_function_count; i++) {
+      const char function_ident_char = g_calculator_function_names[i][character_search_index];
   
-        case '.':
-        case ',': {
-          // Decimal points without numbers are not valid.
-          token->data.number = CALCULATOR_INVALID_NUMBER;
-          token->type = CALCULATOR_TOKEN_TYPE_DECIMAL_OPERAND;
-  
-          return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-        }
-  
-        default: {
-          if (calculator_token_is_numeric(c)) {
-            token->data.number = (calculator_number_t)(c - '0');
-            token->type = CALCULATOR_TOKEN_TYPE_OPERAND;
-
-            return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-          } else if (calculator_token_is_alphabetical(c)) {
-            token->data.identifier_index = CALCULATOR_INVALID_IDENTIFIER_INDEX;
-            token->type = CALCULATOR_TOKEN_TYPE_IDENTIFIER;
-            token->additional_data.identifier.candidate_bits = (calculator_token_identifier_candidate_bits_t)(1 << (sizeof(g_calculator_function_names) / sizeof(g_calculator_function_names[0]))) - 1;
-
-            return calculator_token_check_identifier(token, c) == CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES ? CALCULATOR_TOKEN_FEED_FATAL_ERROR : CALCULATOR_TOKEN_FEED_SUCCESSFUL;
+      if (function_ident_char != '\0' && (candidate_bits & (1 << i)) != 0) {
+        if (function_ident_char == c) {
+          if (character_search_index == (sizeof(g_calculator_function_names[0]) - 1) || g_calculator_function_names[i][character_search_index + 1] == '\0') {
+            return g_calculator_functions[i];
           }
-        }
-      }
 
-      break;
-    }
-
-    case CALCULATOR_TOKEN_TYPE_OPERAND: {
-      if (calculator_token_is_numeric(c)) {
-        token->data.number = (token->data.number * 10.0) + (calculator_number_t)(c - '0');
-
-        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-      } else if (calculator_token_is_decimal_point(c)) {
-        // 5. is 5.0
-        token->type = CALCULATOR_TOKEN_TYPE_DECIMAL_OPERAND;
-
-        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-      } else if (c == '%') {
-        token->data.number = token->data.number / 100.0;
-
-        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-      }
-
-      break;
-    }
-
-    case CALCULATOR_TOKEN_TYPE_DECIMAL_OPERAND: {
-      if (calculator_token_is_numeric(c)) {
-        // Past C's double limit
-        if (++token->additional_data.decimal_length > 16) {
-          return CALCULATOR_TOKEN_FEED_FATAL_ERROR;
-        } else if (token->data.number == CALCULATOR_INVALID_NUMBER) {
-          // .5 is 0.5
-          token->data.number = 0;
-        }
-  
-        token->data.number += (calculator_number_t)(c - '0') / (calculator_number_t)pow(10.0, (double)token->additional_data.decimal_length);
-  
-        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-      } else if (calculator_token_is_decimal_point(c)) {
-        // .. is not valid
-        return CALCULATOR_TOKEN_FEED_FATAL_ERROR;
-      } else if (c == '%') {
-        token->data.number = token->data.number / 100.0;
-
-        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-      }
-
-      break;
-    }
-
-    case CALCULATOR_TOKEN_TYPE_OPERATOR: {
-      if (token->data.character == c && c == '-') {
-        if (token->additional_data.operator.subtype == CALCULATOR_TOKEN_OPERATOR_SUBTYPE_UNARY_NEGATIVE) {
-          // Treat -- (unary) as error
-          return CALCULATOR_TOKEN_FEED_FATAL_ERROR;
+          continue;
         } else {
-          // Treat -- (binary) as +
-          token->data.character = '+';
-
-          return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
+          candidate_bits ^= (1 << i);
         }
       }
-
-      break;
+  
+      left--;
     }
 
-    case CALCULATOR_TOKEN_TYPE_IDENTIFIER: {
-      const calculator_token_identifier_index_t identifier_index = token->data.identifier_index;
-
-      // Start of sin(), cos(), etc
-      if (identifier_index != CALCULATOR_INVALID_IDENTIFIER_INDEX && c == '(') {
-        // Change token to bracket with an identifier index
-        calculator_token_new(token);
-
-        token->data.character = c;
-        token->type = CALCULATOR_TOKEN_TYPE_OPERATOR;
-        token->additional_data.operator.identifier_index = identifier_index;
-
-        return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
-      }
-
-      const int8_t identifier_found_index = calculator_token_check_identifier(token, c);
-
-      // Identifier does not exist
-      if (identifier_found_index == CALCULATOR_TOKEN_CHECK_IDENTIFIER_NO_MATCHES) {
-        return CALCULATOR_TOKEN_FEED_FATAL_ERROR;
-      } else if (identifier_found_index != CALCULATOR_TOKEN_CHECK_IDENTIFIER_REDUCED_MATCHES) {
-        token->data.identifier_index = (calculator_token_identifier_index_t)identifier_found_index;
-      }
-
-      return CALCULATOR_TOKEN_FEED_SUCCESSFUL;
+    if (left == 0) {
+      return NULL;
     }
+
+    character_search_index++;
   }
+}
 
-  return isspace(c) ? CALCULATOR_TOKEN_FEED_GOT_WHITESPACE : CALCULATOR_TOKEN_FEED_TRY_AGAIN;
+calculator_number_t calculator_token_parse_number(const char** expression) {
+  calculator_number_t result = 0;
+  uint8_t decimal_length = 0;
+  bool got_something = false;
+  bool got_decimal = false;
+  bool negative = false;
+
+  for (char c = **expression;; (*expression)++) {
+    switch (c) {
+      case '.':
+      case ',': {
+        if (got_decimal) {
+          return CALCULATOR_INVALID_NUMBER;
+        }
+        
+        got_decimal = true;
+        continue;
+      }
+
+      case '%': {
+        if (got_something) {
+          result /= 100.0;
+          continue;
+        }
+        
+        return CALCULATOR_INVALID_NUMBER;
+      }
+
+      default: {
+        if (c >= '0' && c <= '9') {
+          got_something = true;
+
+          if (got_decimal) {
+            if (++decimal_length > 16) {
+              return CALCULATOR_INVALID_NUMBER;
+            }
+
+            result += (calculator_number_t)(c - '0') / (calculator_number_t)pow(10.0, (double)decimal_length);
+          } else {
+            result = (result * 10.0) + (calculator_number_t)(c - '0');
+          }
+
+          continue;
+        }
+      }
+    }
+
+    if (got_something) {
+      if (negative) {
+        result = -result;
+      }
+
+      return result;
+    }
+
+    return CALCULATOR_INVALID_NUMBER;
+  }
 }
 
 calculator_token_precedence_t calculator_token_precedence(const calculator_token_t* const token) {

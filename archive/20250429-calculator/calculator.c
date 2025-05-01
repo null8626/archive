@@ -1,33 +1,26 @@
 #include "calculator.h"
 
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include <math.h>
 
-#define CALCULATOR_TOKENIZATION_FLAG_NORMAL 0
-#define CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND 1
-#define CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE 2
-
-#define CALCULATOR_STATE_NEXT_OP_BINARY 0
-#define CALCULATOR_STATE_NEXT_OP_UNARY 1
-#define CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER 2
-
-typedef uint8_t calculator_tokenization_flag_t;
-
-bool calculator_new(calculator_t* const calculator) {
-  return calculator_stack_new(&calculator->results, sizeof(calculator_number_t)) && calculator_stack_new(&calculator->operators, sizeof(calculator_token_t));
+static inline bool calculator_token_is_alphabetical(const char c) {
+  return c >= 'a' && c <= 'z';
 }
 
-static bool calculator_compute_postfix_token(calculator_t* const calculator, const calculator_token_t* const token) {
-  if (calculator_token_is_operand(token)) {
-    if (token->data.number == CALCULATOR_INVALID_NUMBER) {
-      return false;
-    }
+static bool calculator_validate_previous_operators(const calculator_token_t* const previous_token) {
+  return previous_token->type == CALCULATOR_TOKEN_TYPE_OPERAND || previous_token->type == CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET;
+}
 
-    return calculator_stack_push(&calculator->results, &token->data);
+static bool calculator_process_postfix_token(calculator_state_t* const state, const calculator_token_t* const token) {
+  if (token->type == CALCULATOR_TOKEN_TYPE_OPERAND) {
+    return calculator_stack_push(&state->results, &token->data);
   }
 
   calculator_number_t a, b;
 
-  if (!calculator_stack_pop(&calculator->results, &b) || !calculator_stack_pop(&calculator->results, &a)) {
+  if (token->type != CALCULATOR_TOKEN_TYPE_OPERATOR || !calculator_stack_pop(&state->results, &b) || !calculator_stack_pop(&state->results, &a)) {
     return false;
   }
 
@@ -60,80 +53,62 @@ static bool calculator_compute_postfix_token(calculator_t* const calculator, con
 
     case '^': {
       result = (calculator_number_t)pow((double)a, (double)b);
-      break;
-    }
-
-    default: {
-      return false;
     }
   }
 
-  return calculator_stack_push(&calculator->results, &result);
+  return calculator_stack_push(&state->results, &result);
 }
 
-static bool calculator_compute_infix_token(calculator_t* const calculator, calculator_token_t* const token) {
-  const bool next_is_negative = calculator->state == CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER;
+static bool calculator_process_infix_token(calculator_state_t* const state, const calculator_token_t* const token) {
+  memcpy(&state->previous_token, token, sizeof(calculator_token_t));
   
-  if (calculator_token_is_operand(token)) {
-    // Incomplete decimal number, e.g: .
-    if (token->data.number == CALCULATOR_INVALID_NUMBER) {
-      return false;
-    } else if (next_is_negative) {
-      // Negative number, e.g: -5
-      token->data.number = -token->data.number;
+  switch (token->type) {
+    case CALCULATOR_TOKEN_TYPE_OPERAND: {
+      return calculator_process_postfix_token(state, token);
     }
 
-    calculator->state = CALCULATOR_STATE_NEXT_OP_BINARY;
+    case CALCULATOR_TOKEN_TYPE_OPERATOR: {
+      const calculator_token_precedence_t token_precedence = calculator_token_precedence(token);
+      calculator_token_t* operator;
 
-    return calculator_compute_postfix_token(calculator, token);
-  } else if (token->type == CALCULATOR_TOKEN_TYPE_IDENTIFIER) {
-    // Identifiers should not be in here
-    return false;
-  }
+      while ((operator = (calculator_token_t*)calculator_stack_peek(&state->operators)) != NULL && operator->type != CALCULATOR_TOKEN_TYPE_OPENING_BRACKET && token_precedence <= calculator_token_precedence(operator)) {
+        if (!calculator_process_postfix_token(state, operator)) {
+          return false;
+        }
 
-  switch (token->data.character) {
-    case '(': {
-      // -(2 + 5), mark this entire bracket's computation result as negative
-      if (next_is_negative) {
-        token->additional_data.operator.subtype = CALCULATOR_TOKEN_OPERATOR_SUBTYPE_NEGATIVE_BRACKET;
+        calculator_stack_pop(&state->operators, NULL);
       }
 
-      calculator->state = CALCULATOR_STATE_NEXT_OP_UNARY;
-
-      return calculator_stack_push(&calculator->operators, token);
+      return calculator_stack_push(&state->operators, token);
     }
 
-    case ')': {
-      // (2 + 5 -) is not valid
-      if (next_is_negative) {
-        return false;
-      }
+    case CALCULATOR_TOKEN_TYPE_OPENING_BRACKET: {
+      return calculator_stack_push(&state->operators, token);
+    }
 
+    case CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET: {
       calculator_token_t operator;
 
-      calculator_token_new(&operator);
+      memset(&operator, 0, sizeof(calculator_token_t));
 
-      while (calculator_stack_pop(&calculator->operators, &operator) && operator.data.character != '(') {
-        if (!calculator_compute_postfix_token(calculator, &operator)) {
+      while (calculator_stack_pop(&state->operators, &operator) && operator.type != CALCULATOR_TOKEN_TYPE_OPENING_BRACKET) {
+        if (!calculator_process_postfix_token(state, &operator)) {
           return false;
         }
       }
 
       // 2 + 5) is not valid
-      if (operator.data.character != '(') {
+      if (operator.type != CALCULATOR_TOKEN_TYPE_OPENING_BRACKET) {
         return false;
       }
 
-      calculator_number_t* const result = (calculator_number_t*)calculator_stack_peek(&calculator->results);
+      calculator_number_t* const result = (calculator_number_t*)calculator_stack_peek(&state->results);
 
       if (result == NULL) {
         return false;
-      }
-
-      // Evaluate identifier functions
-      if (operator.additional_data.operator.identifier_index != CALCULATOR_INVALID_IDENTIFIER_INDEX) {
-        calculator_function_t function = calculator_token_get_function(operator.additional_data.operator.identifier_index);
-        const calculator_number_t function_result = function(*result);
+      } else if (operator.data.value.function != NULL) {
+        // Evaluate identifier functions
+        const calculator_number_t function_result = operator.data.value.function(*result);
 
         if (isnan(function_result) || function_result == CALCULATOR_INVALID_NUMBER) {
           return false;
@@ -143,166 +118,198 @@ static bool calculator_compute_infix_token(calculator_t* const calculator, calcu
       }
       
       // If bracket is negative, make it negative
-      if (operator.additional_data.operator.subtype == CALCULATOR_TOKEN_OPERATOR_SUBTYPE_NEGATIVE_BRACKET) {
+      if (operator.data.value.negative) {
         *result = -*result;
       }
-
-      calculator->state = CALCULATOR_STATE_NEXT_OP_BINARY;
-
-      break;
-    }
-
-    case '-': {
-      if (calculator->state == CALCULATOR_STATE_NEXT_OP_UNARY) {
-        token->additional_data.operator.subtype = CALCULATOR_TOKEN_OPERATOR_SUBTYPE_UNARY_NEGATIVE;
-        calculator->state = CALCULATOR_STATE_NEXT_NEGATIVE_NUMBER;
-
-        break;
-      }
-
-      // Skip the check below
-      goto CALCULATOR_HANDLE_INFIX_OPERATOR_TOKEN;
-    }
-
-    default: {
-      // -+ is not valid
-      if (next_is_negative) {
-        return false;
-      }
-
-CALCULATOR_HANDLE_INFIX_OPERATOR_TOKEN:
-      calculator->state = CALCULATOR_STATE_NEXT_OP_UNARY;
-
-      const calculator_token_precedence_t token_precedence = calculator_token_precedence(token);
-      calculator_token_t* operator;
-
-      while ((operator = (calculator_token_t*)calculator_stack_peek(&calculator->operators)) != NULL && operator->data.character != '(' && token_precedence <= calculator_token_precedence(operator)) {
-        if (!calculator_compute_postfix_token(calculator, operator)) {
-          return false;
-        }
-
-        calculator_stack_pop(&calculator->operators, NULL);
-      }
-
-      return calculator_stack_push(&calculator->operators, token);
     }
   }
 
   return true;
 }
 
-static bool calculator_compute_infix_multiplication(calculator_t* const calculator) {
+static bool calculator_embed_multiplication_operator(calculator_state_t* const state) {
   calculator_token_t token;
 
-  calculator_token_new(&token);
+  memset(&token, 0, sizeof(calculator_token_t));
 
-  token.data.character = '*';
   token.type = CALCULATOR_TOKEN_TYPE_OPERATOR;
+  token.data.character = '*';
 
-  return calculator_compute_infix_token(calculator, &token);
+  return calculator_process_infix_token(state, &token);
 }
 
-calculator_number_t calculator_compute(calculator_t* const calculator, const char* expression) {
-  calculator->state = CALCULATOR_STATE_NEXT_OP_UNARY;
+bool calculator_new(calculator_state_t* const state) {
+  memset(state, 0, sizeof(calculator_state_t));
 
-  calculator_stack_clear(&calculator->results);
-  calculator_stack_clear(&calculator->operators);
+  return calculator_stack_new(&state->results, sizeof(calculator_number_t)) && calculator_stack_new(&state->operators, sizeof(calculator_token_t));
+}
 
-  calculator_tokenization_flag_t flag = CALCULATOR_TOKENIZATION_FLAG_NORMAL;
-  calculator_token_t token, replacement_token;
-  char c;
+void calculator_free(calculator_state_t* const state) {
+  calculator_stack_free(&state->operators);
+  calculator_stack_free(&state->results);
+}
 
-  calculator_token_new(&token);
+calculator_number_t calculator_compute(calculator_state_t* state, const char* expression) {
+  calculator_number_t result = CALCULATOR_INVALID_NUMBER;
+  bool dynamic_state;
 
-  while ((c = *(expression++)) != '\0') {
-    switch (calculator_token_feed(&token, c)) {
-      case CALCULATOR_TOKEN_FEED_SUCCESSFUL: {
-        if (calculator_token_is_operand(&token)) {
-          // 5 2 is not valid
-          if (flag == CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE) {
-            return CALCULATOR_INVALID_NUMBER;
-          }
+  if (dynamic_state = state == NULL) {
+    if ((state = malloc(sizeof(calculator_state_t))) == NULL || !calculator_new(state)) {
+      goto CALCULATOR_COMPUTE_END;
+    }
+  } else {
+    memset(&state->previous_token, 0, sizeof(calculator_token_t));
 
-          flag = CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND;
-        } else {
-          flag = CALCULATOR_TOKENIZATION_FLAG_NORMAL;
+    calculator_stack_clear(&state->operators);
+    calculator_stack_clear(&state->results);
+  }
+
+  calculator_token_t token;
+  bool unary_negative = false;
+  bool unary = true;
+  char c = *expression;
+
+  while (true) {
+    while (isspace(c = *expression)) {
+      expression++;
+    }
+
+    memset(&token, 0, sizeof(calculator_token_t));
+
+    switch (c) {
+      case '\0': {
+        if (calculator_validate_previous_operators(&state->previous_token)) {
+          goto CALCULATOR_COMPUTE_RESULT;
         }
 
-        break;
+        goto CALCULATOR_COMPUTE_END;
       }
 
-      case CALCULATOR_TOKEN_FEED_FATAL_ERROR: {
-        return CALCULATOR_INVALID_NUMBER;
+      case '-': {
+        if (unary) {
+          unary_negative = true;
+          break;
+        }
       }
 
-      case CALCULATOR_TOKEN_FEED_GOT_WHITESPACE: {
-        // Check for impending 5 2 which is invalid
-        if (flag == CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND) {
-          flag = CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE;
+      case '+':
+      case '*':
+      case '/':
+      case '^': {
+        token.type = CALCULATOR_TOKEN_TYPE_OPERATOR;
+        token.data.character = c;
+
+        if (!calculator_validate_previous_operators(&state->previous_token) || !calculator_process_infix_token(state, &token)) {
+          goto CALCULATOR_COMPUTE_END;
         }
 
-        break;
+        expression++;
+        unary = true;
+
+        continue;
       }
 
-      case CALCULATOR_TOKEN_FEED_TRY_AGAIN: {
-        calculator_token_new(&replacement_token);
+      case '(': {
+        if (unary_negative) {
+          unary_negative = false;
+          token.data.value.negative = true;
+        }
 
-        // Same thing, most possibly an invalid character/syntax
-        if (calculator_token_feed(&replacement_token, c) == CALCULATOR_TOKEN_FEED_TRY_AGAIN) {
-          return CALCULATOR_INVALID_NUMBER;
-        }
-        
-        const bool replacement_token_is_operand = calculator_token_is_operand(&replacement_token);
-        
-        // Treat 5(2 + 1) as 5 * (2 + 1)
-        // Treat (1 + 6)(2 + 1) as (1 + 6) * (2 + 1)
-        // Treat (2 + 1)7 as (2 + 1) * 7
-        
-        // By the way I think I just wrote my biggest if statement to date lol
+        token.type = CALCULATOR_TOKEN_TYPE_OPENING_BRACKET;
 
-        if (token.type != CALCULATOR_TOKEN_TYPE_NULL && (!calculator_compute_infix_token(calculator, &token) || (
-          (calculator_token_is_opening_bracket(&replacement_token) && (
-            calculator_token_is_operand(&token) ||
-            calculator_token_is_closing_bracket(&token))
-          ) || (replacement_token_is_operand && calculator_token_is_closing_bracket(&token))
-        ) && !calculator_compute_infix_multiplication(calculator))) {
-          return CALCULATOR_INVALID_NUMBER;
+        if (((state->previous_token.type == CALCULATOR_TOKEN_TYPE_OPERAND || state->previous_token.type == CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET) && !calculator_embed_multiplication_operator(state)) || !calculator_process_infix_token(state, &token)) {
+          goto CALCULATOR_COMPUTE_END;
         }
-        
-        if (replacement_token_is_operand) {
-          // 5 2 is not valid
-          if (flag == CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND_AND_WHITESPACE) {
-            return CALCULATOR_INVALID_NUMBER;
-          }
-  
-          flag = CALCULATOR_TOKENIZATION_FLAG_GOT_OPERAND;
-        } else {
-          flag = CALCULATOR_TOKENIZATION_FLAG_NORMAL;
-        }
-        
-        memcpy(&token, &replacement_token, sizeof(calculator_token_t));
+
+        expression++;
+        unary = true;
+
+        continue;
       }
+
+      case ')': {
+        token.type = CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET;
+
+        if (!calculator_validate_previous_operators(&state->previous_token) || !calculator_process_infix_token(state, &token)) {
+          goto CALCULATOR_COMPUTE_END;
+        }
+
+        expression++;
+        unary = false;
+
+        continue;
+      }
+    }
+
+    calculator_number_t number = calculator_token_parse_number(&expression);
+
+    if (number != CALCULATOR_INVALID_NUMBER) {
+      if (unary_negative) {
+        unary_negative = false;
+        number = -number;
+      }
+
+      token.type = CALCULATOR_TOKEN_TYPE_OPERAND;
+      token.data.number = number;
+
+      if ((state->previous_token.type == CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET && !calculator_embed_multiplication_operator(state)) || state->previous_token.type == CALCULATOR_TOKEN_TYPE_OPERAND || !calculator_process_infix_token(state, &token)) {
+        goto CALCULATOR_COMPUTE_END;
+      }
+
+      unary = false;
+
+      continue;
+    }
+
+    const calculator_function_t function = calculator_token_parse_function_call(&expression);
+
+    if (function != NULL && *(expression++) == '(') {
+      if (unary_negative) {
+        unary_negative = false;
+        token.data.value.negative = true;
+      }
+
+      token.type = CALCULATOR_TOKEN_TYPE_OPENING_BRACKET;
+      token.data.value.function = function;
+
+      if (((state->previous_token.type == CALCULATOR_TOKEN_TYPE_OPERAND || state->previous_token.type == CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET) && !calculator_embed_multiplication_operator(state)) || !calculator_process_infix_token(state, &token)) {
+        goto CALCULATOR_COMPUTE_END;
+      }
+
+      unary = true;
+
+      continue;
+    }
+
+    if (!unary_negative) {
+      goto CALCULATOR_COMPUTE_END;
     }
   }
 
-  if (token.type != CALCULATOR_TOKEN_TYPE_NULL && !calculator_compute_infix_token(calculator, &token)) {
-    return CALCULATOR_INVALID_NUMBER;
+CALCULATOR_COMPUTE_RESULT:
+  if (token.type != CALCULATOR_TOKEN_TYPE_NULL && !calculator_process_infix_token(state, &token)) {
+    goto CALCULATOR_COMPUTE_END;
   }
-
+  
   calculator_token_t remainder_operator;
   
-  while (calculator_stack_pop(&calculator->operators, &remainder_operator)) {
-    if (!calculator_compute_postfix_token(calculator, &remainder_operator)) {
-      return CALCULATOR_INVALID_NUMBER;
+  while (calculator_stack_pop(&state->operators, &remainder_operator)) {
+    if (!calculator_process_postfix_token(state, &remainder_operator)) {
+      goto CALCULATOR_COMPUTE_END;
     }
   }
+  
+  const calculator_number_t* const final_result = (calculator_number_t*)calculator_stack_peek(&state->results);
 
-  const calculator_number_t* const result = calculator_stack_peek(&calculator->results);
+  if (final_result != NULL) {
+    result = *final_result;
+  }
 
-  return result == NULL ? CALCULATOR_INVALID_NUMBER : *result;
-}
+CALCULATOR_COMPUTE_END:
+  if (dynamic_state && state != NULL) {
+    calculator_free(state);
+    free(state);
+  }
 
-void calculator_free(calculator_t* const calculator) {
-  calculator_stack_free(&calculator->operators);
-  calculator_stack_free(&calculator->results);
+  return result;
 }
