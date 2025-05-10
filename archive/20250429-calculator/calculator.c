@@ -263,22 +263,26 @@ calculator_number_t calculator_compute(calculator_state_t* state, const char* ex
 
     const calculator_function_t function = calculator_token_parse_function_call(&expression);
 
-    if (function != NULL && *(expression++) == '(') {
-      if (unary_negative) {
-        unary_negative = false;
-        token.data.value.negative = true;
+    if (function != NULL) {
+      if (*(expression++) == '(') {
+        if (unary_negative) {
+          unary_negative = false;
+          token.data.value.negative = true;
+        }
+        
+        token.type = CALCULATOR_TOKEN_TYPE_OPENING_BRACKET;
+        token.data.value.function = function;
+        
+        if (((state->previous_token.type == CALCULATOR_TOKEN_TYPE_OPERAND || state->previous_token.type == CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET) && !calculator_embed_multiplication_operator(state)) || !calculator_process_infix_token(state, &token)) {
+          goto CALCULATOR_COMPUTE_END;
+        }
+        
+        unary = true;
+        
+        continue;
       }
 
-      token.type = CALCULATOR_TOKEN_TYPE_OPENING_BRACKET;
-      token.data.value.function = function;
-
-      if (((state->previous_token.type == CALCULATOR_TOKEN_TYPE_OPERAND || state->previous_token.type == CALCULATOR_TOKEN_TYPE_CLOSING_BRACKET) && !calculator_embed_multiplication_operator(state)) || !calculator_process_infix_token(state, &token)) {
-        goto CALCULATOR_COMPUTE_END;
-      }
-
-      unary = true;
-
-      continue;
+      goto CALCULATOR_COMPUTE_END;
     }
 
     if (!unary_negative) {
