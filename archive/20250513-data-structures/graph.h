@@ -1,8 +1,6 @@
 #ifndef _GRAPH_H
 #define _GRAPH_H
 
-#define GRAPH_TRAVERSAL
-
 #if defined(GRAPH_DIJKSTRA) || defined(GRAPH_TRAVERSAL)
 #include "hash_table.h"
 #endif
