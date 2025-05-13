@@ -563,24 +563,18 @@ static bool vertex_traverse_depth_inner(hash_table_t* const visited, const verte
   }
 
   vertex_iterator_t iterator;
-  vertex_t* destination;
-  vertex_edge_t* destination_edge;
+  vertex_edge_entry_t entry;
 
   vertex_iterator_new(&iterator, vertex);
 
-  while ((destination_edge = vertex_iterator_next(&iterator, &destination)) != NULL) {
-    if (hash_table_has(visited, (const hash_table_key_t)destination)) {
+  while ((entry.edge = vertex_iterator_next(&iterator, &entry.vertex)) != NULL) {
+    if (hash_table_has(visited, (const hash_table_key_t)entry.vertex)) {
       continue;
     }
 
-    vertex_edge_entry_t entry;
-
-    entry.vertex = destination;
-    entry.edge = destination_edge;
-
     callback(&entry);
 
-    if (!vertex_traverse_depth_inner(visited, destination, callback)) {
+    if (!vertex_traverse_depth_inner(visited, entry.vertex, callback)) {
       return false;
     }
   }
