@@ -1,5 +1,8 @@
 /* Posted on 10 April 2025 (original), 13 May 2025 (current) */
 
+#define GRAPH_DIJKSTRA
+#define GRAPH_TRAVERSAL
+
 #include "graph.h"
 
 #include <stdlib.h>
@@ -62,13 +65,6 @@ vertex_t* vertex_new(const vertex_data_t data) {
   return vertex;
 }
 
-/**
- * @brief Checks if two edges are basically the same thing.
- * 
- * @param edge1 The first edge to compare.
- * @param edge2 The second edge to compare.
- * @return Whether they are basically equal direction and purpose-wise.
- */
 static bool vertex_edge_is_equal(const vertex_edge_t* const edge1, const vertex_edge_t* const edge2) {
   const bool is_bidirectional = edge1->direction == EDGE_DIRECTION_BIDIRECTIONAL && edge2->direction == EDGE_DIRECTION_BIDIRECTIONAL;
 
@@ -85,12 +81,6 @@ static bool vertex_edge_is_equal(const vertex_edge_t* const edge1, const vertex_
   return false;
 }
 
-/**
- * @brief Tries to add an edge to the vertex's edges array.
- * 
- * @return Whether it works.
- * @note If it fails, the vertex's edges array length will be set to 0.
- */
 static bool vertex_add_edge(vertex_t* const vertex, vertex_edge_t* const edge) {
   if (vertex->edges == NULL) {
     if ((vertex->edges = malloc(sizeof(vertex_edge_t*))) == NULL) {
@@ -122,13 +112,6 @@ static bool vertex_add_edge(vertex_t* const vertex, vertex_edge_t* const edge) {
   return true;
 }
 
-/**
- * @brief Disconnects a vertex from an edge by removing the edge from the vertex's edges array.
- * 
- * @param vertex The specified vertex.
- * @param edge The specified edge.
- * @note Has no effect if vertex is NULL or the vertex's edges array is empty.
- */
 static void vertex_disconnect_from(vertex_t* const vertex, vertex_edge_t* const edge) {
   if (vertex == NULL || vertex->edges_length == 0) {
     return;
@@ -158,12 +141,6 @@ static void vertex_disconnect_from(vertex_t* const vertex, vertex_edge_t* const 
   }
 }
 
-/**
- * @brief Frees an edge and calls its disposal function if it exists.
- * 
- * @param edge The specified edge.
- * @param weight_free This edge's weight free function to be called upon disposal. Optional.
- */
 static void vertex_free_edge(vertex_edge_t* const edge, const vertex_edge_weight_free_t weight_free) {
   if (weight_free != NULL) {
     weight_free(edge->weight);
@@ -200,13 +177,6 @@ vertex_edge_t* vertex_connect(vertex_t* const a, vertex_t* const b, const vertex
   return edge;
 }
 
-/**
- * @brief Tries to retrieve the other side of an edge.
- * 
- * @param vertex The specified vertex.
- * @param edge The specified edge.
- * @return The other side of the edge. Can be NULL if the edge is a loop.
- */
 static vertex_t* vertex_get_other(const vertex_t* const vertex, const vertex_edge_t* const edge) {
   if (edge->a == vertex) {
     if (edge->b == vertex) {
@@ -219,12 +189,6 @@ static vertex_t* vertex_get_other(const vertex_t* const vertex, const vertex_edg
   }
 }
 
-/**
- * @brief Disconnects both sides of an edge and deletes itself.
- * 
- * @param edge The specified edge.
- * @param weight_free This edge's weight free function to be called upon disposal. Optional.
- */
 static void vertex_disconnect(vertex_edge_t* const edge, const vertex_edge_weight_free_t weight_free) {
   vertex_t* const a = edge->a;
 
@@ -237,14 +201,6 @@ static void vertex_disconnect(vertex_edge_t* const edge, const vertex_edge_weigh
   vertex_free_edge(edge, weight_free);
 }
 
-/**
- * @brief Checks if the source vertex can access a destination vertex using the specified edge.
- * 
- * @param source Source vertex.
- * @param edge The specified edge.
- * @param destination Reference to destination vertex. Required.
- * @return Whether the source vertex can access the destination vertex using the specified edge.
- */
 static bool vertex_can_access(vertex_t* const source, vertex_edge_t* const edge, vertex_t** const destination) {
   if (edge->direction == EDGE_DIRECTION_BIDIRECTIONAL) {
     if ((*destination = vertex_get_other(source, edge)) == NULL) {
@@ -315,7 +271,7 @@ vertex_edge_t* vertex_iterator_next(vertex_iterator_t* const it, vertex_t** cons
 #endif
 
 #if defined(GRAPH_DIJKSTRA) || defined(GRAPH_TRAVERSAL)
-static size_t vertex_hash_function(const hash_table_key_t key, hash_function_additional_argument_t* const additional_argument) {
+static size_t vertex_hash_function(const hash_table_key_t key, const hash_function_additional_argument_t* const additional_argument) {
   return ((const vertex_hash_function_t)additional_argument->data)(((const vertex_t* const)key)->data, additional_argument->table_size);
 }
 
@@ -510,7 +466,7 @@ bool vertex_traverse_breadth(const vertex_t* const vertex, const size_t hash_tab
     goto VERTEX_TRAVERSE_BREADTH_END;
   }
   
-  while (single_linked_list_pop_head(&queue, (single_node_data_t* const)&output_entry)) {
+  while (single_linked_list_pop_head(&queue, (single_node_data_t* const)&output_entry, NULL)) {
     if (hash_table_has(&visited, (const hash_table_key_t)output_entry->vertex)) {
       continue;
     }
@@ -557,30 +513,24 @@ VERTEX_TRAVERSE_BREADTH_END:
   return success;
 }
 
-static bool vertex_traverse_depth_inner(hash_table_t* const visited, const vertex_t* const vertex, const vertex_traversal_callback_t callback) {
+static bool vertex_traverse_depth_inner(hash_table_t* const visited, vertex_t* const vertex, const vertex_traversal_callback_t callback) {
   if (!hash_table_set(visited, (const hash_table_key_t)vertex, (const hash_table_value_t)true)) {
     return false;
   }
 
   vertex_iterator_t iterator;
-  vertex_t* destination;
-  vertex_edge_t* destination_edge;
+  vertex_edge_entry_t entry;
 
   vertex_iterator_new(&iterator, vertex);
 
-  while ((destination_edge = vertex_iterator_next(&iterator, &destination)) != NULL) {
-    if (hash_table_has(visited, (const hash_table_key_t)destination)) {
+  while ((entry.edge = vertex_iterator_next(&iterator, &entry.vertex)) != NULL) {
+    if (hash_table_has(visited, (const hash_table_key_t)entry.vertex)) {
       continue;
     }
 
-    vertex_edge_entry_t entry;
-
-    entry.vertex = destination;
-    entry.edge = destination_edge;
-
     callback(&entry);
 
-    if (!vertex_traverse_depth_inner(visited, destination, callback)) {
+    if (!vertex_traverse_depth_inner(visited, entry.vertex, callback)) {
       return false;
     }
   }
@@ -588,7 +538,7 @@ static bool vertex_traverse_depth_inner(hash_table_t* const visited, const verte
   return true;
 }
 
-bool vertex_traverse_depth(const vertex_t* const vertex, const size_t hash_table_size, const vertex_hash_function_t hash_function, const vertex_traversal_callback_t callback) {
+bool vertex_traverse_depth(vertex_t* const vertex, const size_t hash_table_size, const vertex_hash_function_t hash_function, const vertex_traversal_callback_t callback) {
   _GRAPH_ASSERT(vertex != NULL && hash_table_size != 0 && hash_function != NULL && callback != NULL);
 
   bool success = false;

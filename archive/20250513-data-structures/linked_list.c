@@ -84,12 +84,14 @@ bool single_linked_list_insert_tail(single_linked_list_t* const ll, const single
   return false;
 }
 
-bool single_linked_list_pop_head(single_linked_list_t* const ll, single_node_data_t* const output) {
+bool single_linked_list_pop_head(single_linked_list_t* const ll, single_node_data_t* const output, const single_node_data_free_t data_free) {
   _LINKED_LIST_ASSERT(ll != NULL);
 
   if (ll->head != NULL) {
     if (output != NULL) {
       *output = ll->head->data;
+    } else if (data_free != NULL) {
+      data_free(ll->head->data);
     }
 
     single_node_t* const old_head = ll->head;
@@ -106,7 +108,7 @@ bool single_linked_list_pop_head(single_linked_list_t* const ll, single_node_dat
   return false;
 }
 
-bool single_linked_list_pop_tail(single_linked_list_t* const ll, single_node_data_t* const output) {
+bool single_linked_list_pop_tail(single_linked_list_t* const ll, single_node_data_t* const output, const single_node_data_free_t data_free) {
   _LINKED_LIST_ASSERT(ll != NULL);
 
   if (ll->head != NULL) {
@@ -116,6 +118,8 @@ bool single_linked_list_pop_tail(single_linked_list_t* const ll, single_node_dat
   
     if (output != NULL) {
       *output = current->data;
+    } else if (data_free != NULL) {
+      data_free(ll->head->data);
     }
 
     free(current);
@@ -132,46 +136,6 @@ bool single_linked_list_pop_tail(single_linked_list_t* const ll, single_node_dat
   }
 
   return false;
-}
-
-void single_linked_list_remove_head(single_linked_list_t* const ll, const single_node_data_free_t data_free) {
-#if defined(_DEBUG) || !defined(NDEBUG)
-  if (ll == NULL) {
-    return;
-  }
-#endif
-
-  if (ll->head != NULL) {
-    single_linked_list_node_free(ll->head, data_free);
-
-    if ((ll->head = ll->head->next) == NULL) {
-      ll->tail = NULL;
-    }
-  }
-}
-
-void single_linked_list_remove_tail(single_linked_list_t* const ll, const single_node_data_free_t data_free) {
-#if defined(_DEBUG) || !defined(NDEBUG)
-  if (ll == NULL) {
-    return;
-  }
-#endif
-
-  if (ll->head != NULL) {
-    single_node_t* previous = NULL, *current = ll->head;
-
-    for (current = ll->head; current->next != NULL; previous = current, current = current->next) {}
-
-    single_linked_list_node_free(current, data_free);
-
-    if (previous != NULL) {
-      previous->next = NULL;
-    } else {
-      ll->head = NULL;
-    }
-
-    ll->tail = previous;
-  }
 }
 
 void single_linked_list_free(single_linked_list_t* const ll, const single_node_data_free_t data_free) {

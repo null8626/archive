@@ -24,14 +24,6 @@ node_t* node_new(const node_data_t data) {
   return node;
 }
 
-/**
- * @brief Adds a new node to the binary search tree from a pointer to its root poitner.
- * 
- * @param node A pointer to the binary search tree node to start from.
- * @param data The data to be carried by this node.
- * @param compare The comparison function to be used.
- * @return Whether the addition was successful or not.
- */
 static bool node_bst_add_ref(node_t** const node, const node_data_t data, const node_data_comparison_t compare) {
   node_t* const n = *node;
 
@@ -69,7 +61,7 @@ bool node_bst_traverse_breadth(node_t* const node, const node_traversal_callback
 
   node_t* current;
 
-  while (single_linked_list_pop_head(&queue, (single_node_data_t* const)&current)) {
+  while (single_linked_list_pop_head(&queue, (single_node_data_t* const)&current, NULL)) {
     callback(current);
 
     if ((current->left != NULL && !single_linked_list_insert_tail(&queue, (const single_node_data_t)current->left)) || (current->right != NULL && !single_linked_list_insert_tail(&queue, (const single_node_data_t)current->right))) {

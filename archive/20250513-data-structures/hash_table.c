@@ -12,7 +12,7 @@
 #define _HASH_TABLE_ASSERT(expr)
 #endif
 
-bool hash_table_new(hash_table_t* const table, const size_t size, const hash_function_t hash_function, const hash_function_additional_argument_data_t hash_function_addional_argument, const hash_table_key_is_equal_t key_is_equal, const hash_table_entry_free_t* entry_free) {
+bool hash_table_new(hash_table_t* const table, const size_t size, const hash_function_t hash_function, const hash_function_additional_argument_data_t hash_function_addional_argument, const hash_table_key_is_equal_t key_is_equal, const hash_table_entry_free_t* const entry_free) {
   _HASH_TABLE_ASSERT(table != NULL);
   
   memset(table, 0, sizeof(hash_table_t));
@@ -174,6 +174,7 @@ bool hash_table_pop(hash_table_t* const table, const hash_table_key_t key, hash_
   return true;
 }
 
+#ifdef HASH_TABLE_ITERATOR
 bool hash_table_iterator_next(const hash_table_t* const table, hash_table_iterator_t* const iterator, hash_table_entry_t* const entry) {
   _HASH_TABLE_ASSERT(table != NULL && table->table != NULL && iterator != NULL && entry != NULL);
 
@@ -195,6 +196,7 @@ bool hash_table_iterator_next(const hash_table_t* const table, hash_table_iterat
   
   return true;
 }
+#endif
 
 void hash_table_free(hash_table_t* const table) {
 #if defined(_DEBUG) || !defined(NDEBUG)

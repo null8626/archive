@@ -60,13 +60,7 @@ bool priority_queue_push(priority_queue_t* const priority_queue, const priority_
 bool priority_queue_pop(priority_queue_t* const priority_queue, priority_queue_data_t* const output, const priority_queue_data_free_t data_free) {
   _PRIORITY_QUEUE_ASSERT(priority_queue != NULL);
 
-  if (output == NULL) {
-    single_linked_list_remove_head(&priority_queue->linked_list, data_free);
-  } else {
-    return single_linked_list_pop_head(&priority_queue->linked_list, (single_node_data_t* const)output);
-  }
-
-  return true;
+  return single_linked_list_pop_head(&priority_queue->linked_list, (single_node_data_t* const)output, data_free);
 }
 
 priority_queue_data_t priority_queue_peek(const priority_queue_t* const priority_queue) {

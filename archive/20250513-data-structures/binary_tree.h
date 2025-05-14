@@ -31,6 +31,22 @@ typedef struct node {
  * @brief Creates a brand new binary tree node.
  * 
  * @param data The data to be carried by this node. Optional.
+ * @see node_bst_add
+ * @see node_bst_traverse_breadth
+ * @see node_bst_traverse_depth
+ * @see node_bst_min
+ * @see node_bst_min_ref
+ * @see node_bst_max
+ * @see node_bst_max_ref
+ * @see node_bst_remove
+ * @see node_bst_find_and_remove
+ * @see node_bst_find
+ * @see node_bst_find_ref
+ * @see node_bst_approx
+ * @see node_bst_approx_ref
+ * @see node_size
+ * @see node_height
+ * @see node_free
  * @return The created node. Can be NULL.
  */
 node_t* node_new(const node_data_t data);
@@ -41,7 +57,9 @@ node_t* node_new(const node_data_t data);
  * @param node The node to start from.
  * @param data The data to be carried by this node.
  * @param compare The comparison function to be used.
- * @return Whether the addition was successful or not.
+ * @see node_bst_remove
+ * @see node_bst_find_and_remove
+ * @return Whether the addition was successful.
  */
 bool node_bst_add(node_t* const node, const node_data_t data, const node_data_comparison_t compare);
 
@@ -50,7 +68,8 @@ bool node_bst_add(node_t* const node, const node_data_t data, const node_data_co
  * 
  * @param node The node to start from.
  * @param callback The callback function that receives each node.
- * @return Whether the traversal was successful or not.
+ * @see node_bst_traverse_depth
+ * @return Whether the traversal was successful.
  */
 bool node_bst_traverse_breadth(node_t* const node, const node_traversal_callback_t callback);
 
@@ -60,6 +79,7 @@ bool node_bst_traverse_breadth(node_t* const node, const node_traversal_callback
  * @param node The node to start from.
  * @param order The specified order.
  * @param callback The callback function that receives each node.
+ * @see node_bst_traverse_breadth
  */
 void node_bst_traverse_depth(node_t* const node, const node_bst_traverse_order_t order, const node_traversal_callback_t callback);
 
@@ -67,6 +87,9 @@ void node_bst_traverse_depth(node_t* const node, const node_bst_traverse_order_t
  * @brief Returns the node with the smallest value (leftmost) from this binary search tree.
  * 
  * @param node The node to start from.
+ * @see node_bst_min_ref
+ * @see node_bst_max
+ * @see node_bst_max_ref
  * @return The node with the smallest value. (leftmost)
  */
 node_t* node_bst_min(node_t* node);
@@ -75,6 +98,13 @@ node_t* node_bst_min(node_t* node);
  * @brief Returns a pointer to the node with the smallest value (leftmost) from this binary search tree.
  * 
  * @param node A pointer to the node to start from.
+ * @see node_bst_min
+ * @see node_bst_max
+ * @see node_bst_max_ref
+ * @see node_bst_remove
+ * @see node_bst_find_and_remove
+ * @see node_bst_find_ref
+ * @see node_bst_approx_ref
  * @return A pointer to the node with the smallest value. (leftmost)
  */
 node_t** node_bst_min_ref(node_t** node);
@@ -83,6 +113,9 @@ node_t** node_bst_min_ref(node_t** node);
  * @brief Returns the node with the largest value (rightmost) from this binary search tree.
  * 
  * @param node The node to start from.
+ * @see node_bst_min
+ * @see node_bst_min_ref
+ * @see node_bst_max_ref
  * @return The node with the smallest value. (rightmost)
  */
 node_t* node_bst_max(node_t* node);
@@ -91,6 +124,14 @@ node_t* node_bst_max(node_t* node);
  * @brief Returns a pointer to the node with the largest value (rightmost) from this binary search tree.
  * 
  * @param node A pointer to the node to start from.
+ * @see node_bst_min
+ * @see node_bst_min_ref
+ * @see node_bst_max
+ * @see node_bst_remove
+ * @see node_bst_find_and_remove
+ * @see node_bst_find_ref
+ * @see node_bst_approx_ref
+ * @see node_free
  * @return A pointer to the node with the largest value. (rightmost)
  */
 node_t** node_bst_max_ref(node_t** node);
@@ -103,7 +144,9 @@ node_t** node_bst_max_ref(node_t** node);
  * @param data_copy The node data's copy function to be called. Optional.
  * @param data_free The node data's free function to be called upon disposal. Optional.
  * @param data_free_argument The argument to be passed onto data_free upon called. Optional.
- * @return Whether the removal was successful or not. Depends if data_copy fails or not. If this fails, it is FATAL and the binary search tree can NO LONGER be used.
+ * @see node_bst_find_and_remove
+ * @see node_free
+ * @return Whether the removal was successful. Depends if data_copy fails. If this fails, it is FATAL and the binary search tree can NO LONGER be used.
  * @note Has no effect if the pointer pointed by node is NULL.
  */
 bool node_bst_remove(node_t** node, const node_data_comparison_t compare, node_data_copy_t data_copy, const node_data_free_t data_free, const node_data_free_argument_t data_free_argument);
@@ -117,7 +160,13 @@ bool node_bst_remove(node_t** node, const node_data_comparison_t compare, node_d
  * @param data_copy The node data's copy function to be called. Optional.
  * @param data_free The node data's free function to be called upon disposal. Optional.
  * @param data_free_argument The argument to be passed onto data_free upon called. Optional.
- * @return Whether the removal was successful or not. Depends if data_copy fails or not. If this fails, it is FATAL and the binary search tree can NO LONGER be used.
+ * @see node_bst_remove
+ * @see node_bst_find
+ * @see node_bst_find_ref
+ * @see node_bst_approx
+ * @see node_bst_approx_ref
+ * @see node_free
+ * @return Whether the removal was successful. Depends if data_copy fails. If this fails, it is FATAL and the binary search tree can NO LONGER be used.
  * @note Has no effect if the pointer pointed by node is NULL.
  */
 bool node_bst_find_and_remove(node_t** node, const node_data_t data, const node_data_comparison_t compare, const node_data_copy_t data_copy, const node_data_free_t data_free, const node_data_free_argument_t data_free_argument);
@@ -128,6 +177,10 @@ bool node_bst_find_and_remove(node_t** node, const node_data_t data, const node_
  * @param node The node to start from.
  * @param data The data to be searched.
  * @param compare The comparison function to be used.
+ * @see node_bst_find_ref
+ * @see node_bst_find_and_remove
+ * @see node_bst_approx
+ * @see node_bst_approx_ref
  * @return The node that matches the value. Can be NULL.
  */
 node_t* node_bst_find(node_t* node, const node_data_t data, const node_data_comparison_t compare);
@@ -138,6 +191,13 @@ node_t* node_bst_find(node_t* node, const node_data_t data, const node_data_comp
  * @param node A pointer to the node to start from.
  * @param data The data to be searched.
  * @param compare The comparison function to be used.
+ * @see node_bst_find
+ * @see node_bst_remove
+ * @see node_bst_find_and_remove
+ * @see node_bst_min_ref
+ * @see node_bst_max_ref
+ * @see node_bst_approx
+ * @see node_bst_approx_ref
  * @return A pointer to the node that matches the value. Can be NULL.
  */
 node_t** node_bst_find_ref(node_t** node, const node_data_t data, const node_data_comparison_t compare);
@@ -149,6 +209,10 @@ node_t** node_bst_find_ref(node_t** node, const node_data_t data, const node_dat
  * @param constraint The specified constraint. Whether to retrieve the closest, floor, or ceil node.
  * @param data The data to be searched.
  * @param compare The comparison function to be used.
+ * @see node_bst_approx_ref
+ * @see node_bst_find
+ * @see node_bst_find_ref
+ * @see node_bst_find_and_remove
  * @return The node that is the closest to the value. Can be NULL.
  */
 node_t* node_bst_approx(node_t* node, const node_bst_approx_constraint_t constraint, const node_data_t data, const node_data_comparison_t compare);
@@ -160,6 +224,13 @@ node_t* node_bst_approx(node_t* node, const node_bst_approx_constraint_t constra
  * @param constraint The specified constraint. Whether to retrieve the closest, floor, or ceil node.
  * @param data The data to be searched.
  * @param compare The comparison function to be used.
+ * @see node_bst_approx
+ * @see node_bst_remove
+ * @see node_bst_find_and_remove
+ * @see node_bst_find
+ * @see node_bst_find_ref
+ * @see node_bst_min_ref
+ * @see node_bst_max_ref
  * @return A pointer to the node that is the closest to the value. Can be NULL.
  */
 node_t** node_bst_approx_ref(node_t** node, const node_bst_approx_constraint_t constraint, const node_data_t data, const node_data_comparison_t compare);
@@ -168,6 +239,7 @@ node_t** node_bst_approx_ref(node_t** node, const node_bst_approx_constraint_t c
  * @brief Retrieves the entire binary tree's height.
  * 
  * @param node The binary tree node to start from.
+ * @see node_size
  * @return The binary tree height, including its root node.
  * @note Has no effect if the starting node is NULL.
  */
@@ -177,6 +249,7 @@ size_t node_height(const node_t* const node);
  * @brief Retrieves the entire binary tree's size.
  * 
  * @param node The binary tree node to start from.
+ * @see node_height
  * @return The binary tree size, including its root node.
  * @note Has no effect if the starting node is NULL.
  */

@@ -60,7 +60,7 @@ bool stack_push(stack_t* const stack, const stack_data_t data) {
   return true;
 }
 
-bool stack_pop(stack_t* const stack, stack_data_t* const output) {
+bool stack_pop(stack_t* const stack, stack_data_t* const output, const stack_data_free_t data_free, const stack_data_free_argument_t data_free_argument) {
   _STACK_ASSERT(stack != NULL);
 
   if (output != NULL) {

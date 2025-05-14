@@ -68,6 +68,12 @@ typedef void (*vertex_traversal_callback_t)(vertex_edge_entry_t* const);
  * @brief Creates a brand new vertex not connected to anything.
  * 
  * @param data The data to be carried by this vertex. Optional.
+ * @see vertex_connect
+ * @see vertex_dijkstra_new
+ * @see vertex_dijkstra_next
+ * @see vertex_traverse_breadth
+ * @see vertex_traverse_depth
+ * @see vertex_free_all
  * @return The created vertex. Can be NULL.
  */
 vertex_t* vertex_new(const vertex_data_t data);
@@ -100,6 +106,7 @@ void vertex_free_all(vertex_t* const vertex, const vertex_data_free_t data_free,
  * 
  * @param it The vertex iterator to initiate or re-use.
  * @param vertex The vertex instance to use.
+ * @see vertex_iterator_next
  */
 void vertex_iterator_new(vertex_iterator_t* const it, vertex_t* const vertex);
 
@@ -122,7 +129,9 @@ vertex_edge_t* vertex_iterator_next(vertex_iterator_t* const it, vertex_t** cons
  * @param hash_table_size Maximum capacity for the hash tables used.
  * @param hash_function The hash function to be used by the hash tables.
  * @param distance_retrieval The function to be used to retrieve distance numbers from edge weights.
- * @return Whether the creation was successful or not.
+ * @see vertex_dijkstra_next
+ * @see vertex_dijkstra_free
+ * @return Whether the creation was successful.
  */
 bool vertex_dijkstra_new(vertex_dijkstra_t* const dijkstra, vertex_t* const start, const size_t hash_table_size, const vertex_hash_function_t hash_function, const vertex_dijkstra_distance_retrieval_t distance_retrieval);
 
@@ -132,6 +141,7 @@ bool vertex_dijkstra_new(vertex_dijkstra_t* const dijkstra, vertex_t* const star
  * @param dijkstra The dijkstra instance to be used.
  * @param start The vertex reference to use.
  * @param output_edge The edge connecting the result. Optional.
+ * @see vertex_dijkstra_free
  * @return The next vertex. This and output_edge can be NULL.
  */
 vertex_t* vertex_dijkstra_next(const vertex_dijkstra_t* const dijkstra, const vertex_t* const vertex, vertex_edge_t** const output_edge);
@@ -152,7 +162,8 @@ void vertex_dijkstra_free(vertex_dijkstra_t* const dijkstra);
  * @param hash_table_size Maximum capacity for the hash tables used.
  * @param hash_function The hash function to be used by the hash tables.
  * @param callback The callback function for receiving traversal outputs.
- * @return Whether the iteration was successful or not.
+ * @see vertex_traverse_depth
+ * @return Whether the iteration was successful.
  */
 bool vertex_traverse_breadth(const vertex_t* const vertex, const size_t hash_table_size, const vertex_hash_function_t hash_function, const vertex_traversal_callback_t callback);
 
@@ -163,8 +174,9 @@ bool vertex_traverse_breadth(const vertex_t* const vertex, const size_t hash_tab
  * @param hash_table_size Maximum capacity for the hash tables used.
  * @param hash_function The hash function to be used by the hash tables.
  * @param callback The callback function for receiving traversal outputs.
- * @return Whether the traversal was successful or not.
+ * @see vertex_traverse_breadth
+ * @return Whether the traversal was successful.
  */
-bool vertex_traverse_depth(const vertex_t* const vertex, const size_t hash_table_size, const vertex_hash_function_t hash_function, const vertex_traversal_callback_t callback);
+bool vertex_traverse_depth(vertex_t* const vertex, const size_t hash_table_size, const vertex_hash_function_t hash_function, const vertex_traversal_callback_t callback);
 #endif
 #endif
