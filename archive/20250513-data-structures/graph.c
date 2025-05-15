@@ -1,8 +1,5 @@
 /* Posted on 10 April 2025 (original), 13 May 2025 (current) */
 
-#define GRAPH_DIJKSTRA
-#define GRAPH_TRAVERSAL
-
 #include "graph.h"
 
 #include <stdlib.h>
@@ -274,10 +271,6 @@ vertex_edge_t* vertex_iterator_next(vertex_iterator_t* const it, vertex_t** cons
 static size_t vertex_hash_function(const hash_table_key_t key, const hash_function_additional_argument_t* const additional_argument) {
   return ((const vertex_hash_function_t)additional_argument->data)(((const vertex_t* const)key)->data, additional_argument->table_size);
 }
-
-static bool vertex_is_equal(const hash_table_key_t entry1, const hash_table_key_t entry2) {
-  return (const vertex_t* const)entry1 == (const vertex_t* const)entry2;
-}
 #endif
 
 #ifdef GRAPH_DIJKSTRA
@@ -312,14 +305,25 @@ bool vertex_dijkstra_new(vertex_dijkstra_t* const dijkstra, vertex_t* const star
 
   memset(&priority_queue, 0, sizeof(priority_queue_t));
   memset(&distance_map, 0, sizeof(hash_table_t));
-  memset(&dijkstra->previous_map_entry_free, 0, sizeof(hash_table_entry_free_t));
 
   priority_queue_new(&priority_queue, vertex_priority_queue_entry_compare);
 
-  dijkstra->previous_map_entry_free.value_free = vertex_cleanup_with_argument;
+  hash_table_descriptor_t hash_table_descriptor;
 
-  if (!hash_table_new(&dijkstra->previous_map, hash_table_size, vertex_hash_function, (const hash_function_additional_argument_data_t)hash_function, vertex_is_equal, &dijkstra->previous_map_entry_free) ||
-      !hash_table_new(&distance_map, hash_table_size, vertex_hash_function, (const hash_function_additional_argument_data_t)hash_function, vertex_is_equal, NULL)) {
+  memset(&hash_table_descriptor, 0, sizeof(hash_table_descriptor_t));
+
+  hash_table_descriptor.size = hash_table_size;
+  hash_table_descriptor.hash_function.function = vertex_hash_function;
+  hash_table_descriptor.hash_function.additional_argument = (const hash_function_additional_argument_data_t)hash_function;
+  hash_table_descriptor.entry_free.value_free = vertex_cleanup_with_argument;
+
+  if (!hash_table_new(&dijkstra->previous_map, &hash_table_descriptor)) {
+    goto VERTEX_DIJKSTRA_NEW_END;
+  }
+
+  hash_table_descriptor.entry_free.value_free = NULL;
+
+  if (!hash_table_new(&distance_map, &hash_table_descriptor)) {
     goto VERTEX_DIJKSTRA_NEW_END;
   }
 
@@ -458,11 +462,18 @@ bool vertex_traverse_breadth(const vertex_t* const vertex, const size_t hash_tab
 
   vertex_edge_entry_t* output_entry = NULL;
   bool success = false;
+
+  hash_table_descriptor_t visited_descriptor;
   hash_table_t visited;
 
   memset(&visited, 0, sizeof(hash_table_t));
+  memset(&visited_descriptor, 0, sizeof(hash_table_descriptor_t));
 
-  if (!hash_table_new(&visited, hash_table_size, vertex_hash_function, (const hash_function_additional_argument_data_t)hash_function, vertex_is_equal, NULL)) {
+  visited_descriptor.size = hash_table_size;
+  visited_descriptor.hash_function.function = vertex_hash_function;
+  visited_descriptor.hash_function.additional_argument = (const hash_function_additional_argument_data_t)hash_function;
+
+  if (!hash_table_new(&visited, &visited_descriptor)) {
     goto VERTEX_TRAVERSE_BREADTH_END;
   }
   
@@ -542,17 +553,21 @@ bool vertex_traverse_depth(vertex_t* const vertex, const size_t hash_table_size,
   _GRAPH_ASSERT(vertex != NULL && hash_table_size != 0 && hash_function != NULL && callback != NULL);
 
   bool success = false;
+
+  hash_table_descriptor_t visited_descriptor;
   hash_table_t visited;
 
   memset(&visited, 0, sizeof(hash_table_t));
+  memset(&visited_descriptor, 0, sizeof(hash_table_descriptor_t));
 
-  if (!hash_table_new(&visited, hash_table_size, vertex_hash_function, (const hash_function_additional_argument_data_t)hash_function, vertex_is_equal, NULL)) {
-    goto VERTEX_TRAVERSE_DEPTH_END;
+  visited_descriptor.size = hash_table_size;
+  visited_descriptor.hash_function.function = vertex_hash_function;
+  visited_descriptor.hash_function.additional_argument = (const hash_function_additional_argument_data_t)hash_function;
+
+  if (hash_table_new(&visited, &visited_descriptor)) {
+    success = vertex_traverse_depth_inner(&visited, vertex, callback);
   }
 
-  success = vertex_traverse_depth_inner(&visited, vertex, callback);
-
-VERTEX_TRAVERSE_DEPTH_END:
   hash_table_free(&visited);
 
   return success;

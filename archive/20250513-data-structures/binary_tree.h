@@ -20,12 +20,13 @@ typedef int64_t node_data_comparison_result_t;
 typedef node_data_t (*node_data_copy_t)(node_data_t);
 typedef void (*node_data_free_t)(node_data_t, node_data_free_argument_t);
 typedef node_data_comparison_result_t (*node_data_comparison_t)(node_data_t, node_data_t);
-typedef void (*node_traversal_callback_t)(const node_t* const);
 
 typedef struct node {
   node_data_t data;
   struct node* left, *right;
 } node_t;
+
+typedef void (*node_traversal_callback_t)(const node_t* const);
 
 /**
  * @brief Creates a brand new binary tree node.

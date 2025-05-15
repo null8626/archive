@@ -44,7 +44,6 @@ typedef struct {
 
 #ifdef GRAPH_DIJKSTRA
 typedef struct {
-  hash_table_entry_free_t previous_map_entry_free;
   hash_table_t previous_map;
   vertex_t* start;
 } vertex_dijkstra_t;

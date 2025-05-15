@@ -11,11 +11,11 @@
 #define _STACK_ASSERT(expr)
 #endif
 
-bool stack_new(stack_t* const stack) {
-  _STACK_ASSERT(stack != NULL);
+bool stack_new_with_capacity(stack_t* const stack, const size_t capacity) {
+  _STACK_ASSERT(stack != NULL && capacity != 0);
 
   stack->length = 0;
-  stack->capacity = 2;
+  stack->capacity = capacity;
 
   return (stack->stack = malloc(stack->capacity * sizeof(stack_data_t))) != NULL;
 }

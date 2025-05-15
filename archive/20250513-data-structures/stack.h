@@ -15,9 +15,11 @@ typedef struct {
 } stack_t;
 
 /**
- * @brief Creates a brand new stack.
+ * @brief Creates a brand new stack with an initial capacity.
  * 
  * @param stack The stack to create.
+ * @param capacity The initial capacity. Cannot be zero.
+ * @see stack_new
  * @see stack_push
  * @see stack_pop
  * @see stack_peek
@@ -26,7 +28,24 @@ typedef struct {
  * @see stack_free
  * @return Whether the creation was successful.
  */
-bool stack_new(stack_t* const stack);
+bool stack_new_with_capacity(stack_t* const stack, const size_t capacity);
+
+/**
+ * @brief Creates a brand new stack.
+ * 
+ * @param stack The stack to create.
+ * @see stack_new_with_capacity
+ * @see stack_push
+ * @see stack_pop
+ * @see stack_peek
+ * @see stack_clear
+ * @see stack_is_empty
+ * @see stack_free
+ * @return Whether the creation was successful.
+ */
+inline bool stack_new(stack_t* const stack) {
+  return stack_new_with_capacity(stack, 2);
+}
 
 /**
  * @brief Inserts a new element to the top of the stack.
